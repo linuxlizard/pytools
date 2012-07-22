@@ -4,7 +4,6 @@
 # smart-ass.  
 #
 # davep 19-May-2008
-# $Id: blah.py 417 2008-05-19 15:25:15Z davep $
 
 import sys
 import re
