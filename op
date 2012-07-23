@@ -1,0 +1,56 @@
+#!/usr/bin/python
+
+# Command line calculator. 
+#
+# Create links to 'op'
+# ln -s op add 
+# ln -s op sub 
+# ln -s op mul
+# ln -s op div
+#
+#
+# davep ??-2011
+
+import sys
+import os
+import operator
+
+def mknum( string ) :
+    """Try converting a string to base-10 integer. If that fails, try base-16.
+    If that fails, we'll allow the ValueError to propogate."""
+
+    value = None
+
+    # try float first so things like 'div 1024 3' will give a float answer
+    try :
+        value = float(string)
+        return value
+    except ValueError:
+        pass
+
+    try :
+        value = int(string,10)
+        return value
+    except ValueError:
+        pass
+
+    # ok, last chance; maybe it's hex
+    value = int(string,16)
+
+    return value
+
+exename = os.path.basename(sys.argv[0])
+
+opmap = {
+    "add" : operator.add,
+    "sub" : operator.sub,
+    "mul" : operator.mul,
+    "div" : operator.div,
+
+}
+
+if exename not in opmap : 
+    sys.exit(1)
+
+print reduce( opmap[exename], [ mknum(s) for s in sys.argv[1:] ] )
+
