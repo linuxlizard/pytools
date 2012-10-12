@@ -1,0 +1,585 @@
+ Pynff Frpgvba ***ABGR QNGN nf bs 7/3/2003 7:00:39 NZ
+                                                                                   Gbgny     Frngf  
+             FRP VAFGEHPGBE   QNLF   FGNEG    RAQ     Ybpngvba     OYQ/EZ     PNC Raebyyrq  Ninvynoyr 
+----------------------------------------------------------------------------------------------------
+NPPG 205     001 Fnznuba-Bhzne GE    12:15    01:30   Znva Pnzchf O102N       40     40       0
+NPPG 205     002 Abinx,Rqjva F ZJ    02:40    03:55   Znva Pnzchf O207        60     31       29
+NPPG 205     003 Fgenggba,Eban ZJS   10:40    11:30   Znva Pnzchf O207        60     60       0
+NPPG 205     004 Fgenggba,Eban ZJS   11:40    12:30   Znva Pnzchf O215        40     40       0
+NPPG 205     005 Fgenggba,Eban Z     06:00    09:00   Znva Pnzchf O101        40     39       1
+NPPG 205     006 Bftbbq,Wnzrf  J     06:00    09:00   Znva Pnzchf O309        30     21       9
+NPPG 205     007 Tber,Evpuneq  ZJ    02:40    03:55   Znva Pnzchf O217        40     16       24
+NPPG 205     008 Tber,Evpuneq  ZJ    04:40    05:55   Znva Pnzchf R107        40     19       21
+NPPG 205     009 Fgenggba,Eban ZJ    02:40    03:55   Znva Pnzchf O105        60     13       47
+NPPG 205     010 Tbbqra,Revp F GE    07:40    08:55   Znva Pnzchf O207        60     48       12
+NPPG 205     011 Ratyvfu,Qravf ZJS   10:40    11:30   Znva Pnzchf O215        40     40       0
+NPPG 205     070 Pbggreryy,Fnz S     06:00    09:00   Znva Pnzchf O312        40     9        31
+NPPG 205     726 Vyrgg,Senax R G     06:00    09:00   Pnalba Pb   PLAP_237    41     27       14
+NPPG 206     001 Funaaba,Fhfna GE    12:15    01:30   Znva Pnzchf ZC207       40     40       0
+NPPG 206     002 Eraare,Pryvn  ZJ    04:40    05:55   Znva Pnzchf O217        40     27       13
+NPPG 206     003 Vyrgg,Senax R GE    01:40    02:55   Znva Pnzchf O105        80     28       52
+NPPG 206     004 Puevfgrafra,S ZJS   09:40    10:30   Znva Pnzchf O102N       40     40       0
+NPPG 206     005 Puevfgrafra,S ZJS   11:40    12:30   Znva Pnzchf O207        40     40       0
+NPPG 206     006 Puevfgrafra,S ZJS   01:40    02:30   Znva Pnzchf O102N       40     21       19
+NPPG 206     007 Xbrccra,Qnivq GE    01:40    02:55   Znva Pnzchf ZT121       40     9        31
+NPPG 206     008 Xehzjvrqr,Xvc GE    12:15    01:30   Znva Pnzchf O102O       40     20       20
+NPPG 206     009 Xehzjvrqr,Xvc GE    07:40    08:55   Znva Pnzchf O101        60     28       32
+NPPG 302     001 Funaaba,Fhfna GE    09:15    10:30   Znva Pnzchf O215        40     40       0
+NPPG 302     002 Funaaba,Fhfna GE    03:15    04:30   Znva Pnzchf O217        40     30       10
+NPPG 304     001 Nyyra,Znel S  GE    12:15    01:30   Znva Pnzchf O105        30     30       0
+NPPG 304     002 Ratyvfu,Qravf ZJS   08:40    09:30   Znva Pnzchf O102N       30     32       0
+NPPG 304     530 Nyyra,Znel S  G     06:00    09:00   GJVASYFPFV  GSFV_FU106  25     20       5
+NPPG 306     001 Onuafba,Cnhy  GE    10:40    11:55   Znva Pnzchf O215        30     30       0
+NPPG 306     002 Onuafba,Cnhy  GE    01:40    02:55   Znva Pnzchf O215        40     19       21
+NPPG 308     001 Xbrccra,Qnivq GE    09:15    10:30   Znva Pnzchf R108        40     31       9
+NPPG 308     002 Xbrccra,Qnivq G     06:00    09:00   Znva Pnzchf O312        40     35       5
+NPPG 350     001 Vyrgg,Senax R GE    07:40    08:55   Znva Pnzchf O215        40     28       12
+NPPG 350     002 Vyrgg,Senax R GE    12:15    01:30   Znva Pnzchf O215        40     40       0
+NPPG 351     001 Eraare,Pryvn  ZJ    02:40    03:55   Znva Pnzchf O215        34     35       0
+NPPG 351     530 Eraare,Pryvn  E     06:00    09:00   GJVASYFPFV              25     20       5
+NPPG 405     001 Puevfgrafra,S J     06:00    09:00   Znva Pnzchf O312        40     40       0
+NPPG 450     001 Ratyvfu,Qravf ZJ    04:40    05:55   Znva Pnzchf O215        40     7        33
+NPPG 502     001 Tber,Evpuneq  E     06:00    09:00   Znva Pnzchf O215        20     20       0
+NPPG 505     001 Ratyvfu,Gubzn GE    09:15    10:30   Znva Pnzchf O102N       40     25       15
+NPPG 516     001 Onuafba,Cnhy  GE    04:40    05:55   Znva Pnzchf O102N       25     15       10
+NPPG 520     001 Abinx,Rqjva F G     06:00    09:00   Znva Pnzchf O207        20     15       5
+NPPG 533     001 Qebmqn,Eboreg J     06:00    09:00   Znva Pnzchf O215        20     4        16
+NPPG 570     001 Birefgerrg,Eb E     06:00    09:00   Znva Pnzchf O312        25     4        21
+NPPG 579     001 Funaaba,Fhfna Z     06:00    09:00   Znva Pnzchf O217        20     19       1
+NAGU 101     001 Ubhfr,Xraqnyy J     06:00    09:00   Znva Pnzchf ZC211       64     44       20
+NAGU 102     001 Mvxre,Wbua    ZJS   10:40    11:30   Znva Pnzchf O101        94     86       8
+NAGU 102     002 Mvxre,Wbua    GE    01:40    02:55   Znva Pnzchf ZC211       60     60       0
+NAGU 102     003 Ubhfr,Xraqnyy G     06:00    09:00   Znva Pnzchf ZC118       60     22       38
+NAGU 102     004 Pbk,G Ivetvav ZJS   09:40    10:30   Znva Pnzchf ZC201       53     44       9
+NAGU 102     005 Zvxhynx,Znepv Z     06:00    09:00   Znva Pnzchf ZC211       60     21       39
+NAGU 102     006 Ubhfr,Xraqnyy GE    03:15    04:30   Znva Pnzchf O101        100    10       90
+NAGU 102     070 Xyvxhanf,Yrba F     08:00    11:00   Znva Pnzchf ZC211       49     14       35
+NAGU 102     425 Pbk,G Ivetvav       01:00    01:00   RYRPPNZCHF              35     35       0
+NAGU 102     725 Xyvxhanf,Yrba G     06:00    09:00   Pnalba Pb   PLAP_206    33     26       7
+NAGU 103     001 Uvyy,Puevfgbc ZJS   08:40    09:30   Znva Pnzchf O207        60     30       30
+NAGU 103     002 Uvyy,Puevfgbc Z     06:00    09:00   Znva Pnzchf ZC108       78     25       53
+NAGU 215     001 ZpPney,Eboreg ZJS   09:40    10:30   Znva Pnzchf R108        35     27       8
+NAGU 294     660 Xyvxhanf,Yrba H     09:00    05:00   Znva Pnzchf ZC106       32     16       0
+NAGU 294     660 Xyvxhanf,Yrba F     12:00    07:00   Znva Pnzchf ZC106       32     16       0
+NAGU 294     661 Xyvxhanf,Yrba F     12:00    07:00   Znva Pnzchf ZC106       32     20       0
+NAGU 294     661 Xyvxhanf,Yrba H     09:00    05:00   Znva Pnzchf ZC106       32     20       0
+NAGU 294     662 Xyvxhanf,Yrba F     12:00    07:00   Znva Pnzchf ZC106       32     15       2
+NAGU 294     662 Xyvxhanf,Yrba H     09:00    05:00   Znva Pnzchf ZC106       32     15       2
+NAGU 294     663 Xvghxh,Ivapra ES    06:00    09:00   Znva Pnzchf RG110       100    12       82
+NAGU 294     663 Xvghxh,Ivapra F     08:00    05:00   Znva Pnzchf RG110       100    12       82
+NAGU 294     664 Xvghxh,Ivapra F     08:00    05:00   Znva Pnzchf RG110       100    7        89
+NAGU 294     664 Xvghxh,Ivapra ES    06:00    09:00   Znva Pnzchf RG110       100    7        89
+NAGU 294     665 Xvghxh,Ivapra F     08:00    05:00   Znva Pnzchf RG110       100    4        92
+NAGU 294     665 Xvghxh,Ivapra ES    06:00    09:00   Znva Pnzchf RG110       100    4        92
+NAGU 297     001 Cyrj,Znex T   GE    07:40    08:55   Znva Pnzchf ZC302       25     3        22
+NAGU 297     N   Cyrj,Znex T   Z     01:40    02:30   Znva Pnzchf FA205       25     3        22
+NAGU 300     001 Uvyy,Puevfgbc ZJS   11:40    12:30   Znva Pnzchf R107        40     30       10
+NAGU 311     001 Pbk,G Ivetvav ZJS   08:40    09:30   Znva Pnzchf ZC211       60     57       3
+NAGU 313     001 Cyrj,Znex T   GE    12:15    01:30   Znva Pnzchf R416        40     31       9
+NAGU 315     001 ZpPney,Eboreg ZJS   12:40    01:30   Znva Pnzchf R520        75     39       36
+NAGU 430     001 ZpPney,Eboreg J     02:40    05:30   Znva Pnzchf ZC208       40     19       21
+NAGU 492     001 ZpPney,Eboreg       01:00    01:00   Znva Pnzchf             10     10       0
+NAGU 494     660 Xyvxhanf,Yrba H     09:00    05:00   Znva Pnzchf ZC106       32     14       0
+NAGU 494     660 Xyvxhanf,Yrba F     12:00    07:00   Znva Pnzchf ZC106       32     14       0
+NAGU 494     661 Xyvxhanf,Yrba F     12:00    07:00   Znva Pnzchf ZC106       32     10       0
+NAGU 494     661 Xyvxhanf,Yrba H     09:00    05:00   Znva Pnzchf ZC106       32     10       0
+NAGU 494     662 Xyvxhanf,Yrba F     12:00    07:00   Znva Pnzchf ZC106       32     14       2
+NAGU 494     662 Xyvxhanf,Yrba H     09:00    05:00   Znva Pnzchf ZC106       32     14       2
+NAGU 494     663 Xvghxh,Ivapra ES    06:00    09:00   Znva Pnzchf RG110       100    6        82
+NAGU 494     663 Xvghxh,Ivapra F     08:00    05:00   Znva Pnzchf RG110       100    6        82
+NAGU 494     664 Xvghxh,Ivapra ES    06:00    09:00   Znva Pnzchf RG110       100    4        89
+NAGU 494     664 Xvghxh,Ivapra F     08:00    05:00   Znva Pnzchf RG110       100    4        89
+NAGU 494     665 Xvghxh,Ivapra F     08:00    05:00   Znva Pnzchf RG110       100    4        92
+NAGU 494     665 Xvghxh,Ivapra ES    06:00    09:00   Znva Pnzchf RG110       100    4        92
+NAGU 494     666 Lh,Crv-Yva    FH    08:30    04:30   Znva Pnzchf ZC106       40     0        40
+NAGU 494     667 Uvyy,Puevfgbc FH    08:30    04:30   Znva Pnzchf O312        40     0        40
+NAGU 494     668 Ubhfr,Xraqnyy F     08:30    04:30   Znva Pnzchf O312        40     1        39
+NAGU 495     001 Cyrj,Znex T         01:00    01:00   Znva Pnzchf             10     0        10
+NAGU 497     001 Mvxre,Wbua    GE    09:15    10:30   Znva Pnzchf O221        40     6        34
+NAGU 594     660 Xyvxhanf,Yrba H     09:00    05:00   Znva Pnzchf ZC106       32     2        0
+NAGU 594     660 Xyvxhanf,Yrba F     12:00    07:00   Znva Pnzchf ZC106       32     2        0
+NAGU 594     661 Xyvxhanf,Yrba F     12:00    07:00   Znva Pnzchf ZC106       32     2        0
+NAGU 594     661 Xyvxhanf,Yrba H     09:00    05:00   Znva Pnzchf ZC106       32     2        0
+NAGU 594     662 Xyvxhanf,Yrba H     09:00    05:00   Znva Pnzchf ZC106       32     1        2
+NAGU 594     662 Xyvxhanf,Yrba F     12:00    07:00   Znva Pnzchf ZC106       32     1        2
+NAGU 594     666 Lh,Crv-Yva    FH    08:30    04:30   Znva Pnzchf ZC106       40     0        40
+NAGU 594     667 Uvyy,Puevfgbc FH    08:30    04:30   Znva Pnzchf O312        40     0        40
+NAGU 594     668 Ubhfr,Xraqnyy F     08:30    04:30   Znva Pnzchf O312        40     0        39
+NCCNPNQ  65  081 Wbuafba,Fbaqe E     04:00    06:00   Znva Pnzchf GF202       20     1        19
+NCCNPNQ  70  001 Uhfxrl,Tnlyn  ZJS   08:40    09:30   Znva Pnzchf GF202       20     0        20
+NCCNPNQ  70  002 Wbmjvnx,Wnzrf ZJ    05:40    07:00   Znva Pnzchf ZG104       20     1        19
+NCCNPNQ  70  003 Wbmjvnx,Wnzrf ZJ    05:40    07:00   Pnalba Pb   PLAP_231    20     0        20
+NCCNPNQ  70  004 Uvyy,Puneyrf  GE    07:40    08:55   Znva Pnzchf RG108       20     0        20
+NCCNPNQ  70  005 Uvyy,Puneyrf  GE    07:40    08:55   Pnalba Pb   PLAP_231    20     1        19
+NCCNPNQ  85  001 Zvyyre,Wraal  ZJS   08:40    09:30   Znva Pnzchf RG108       20     2        18
+NCCNPNQ  85  002 Zvyyre,Wraal  ZJS   08:40    09:30   Pnalba Pb   PLAP_231    20     0        20
+NCCNPNQ  88  001 Oeraana,Wnzrf GE    09:15    10:30   Znva Pnzchf RG108       20     11       9
+NCCNPNQ  88  002 Oeraana,Wnzrf GE    09:15    10:30   Pnalba Pb   PLAP_231    20     2        18
+NCCNPNQ  88  003 Oeraana,Wnzrf GE    05:40    07:00   Znva Pnzchf ZG104       20     4        16
+NCCNPNQ  88  004 Oeraana,Wnzrf GE    05:40    07:00   Pnalba Pb   PLAP_231    20     4        16
+NCCNPNQ  90  001 Uvyy,Puneyrf  GE    09:15    10:30   Znva Pnzchf GF200       20     2        18
+NCCNPNQ  90  002 Ehgyrqtr,Zvxr GE    05:40    07:00   Znva Pnzchf RG108       20     7        13
+NCCNPNQ  90  003 Ehgyrqtr,Zvxr GE    05:40    07:00   Znva Pnzchf PLAP_184    20     0        20
+NCCNPNQ 111  001 Trvfyre,Gnzne ZJS   08:40    09:30   Znva Pnzchf NG205       25     17       8
+NCCNPNQ 111  002 Orna,Natryn F ZJS   08:40    09:30   Znva Pnzchf GF200       25     12       13
+NCCNPNQ 111  003 Errfr,Enaqnyy ZJS   02:40    03:30   Znva Pnzchf             25     14       11
+NCCNPNQ 111  004 Trvfyre,Gnzne GE    07:40    08:55   Znva Pnzchf NG205       25     8        17
+NCCNPNQ 111  005 Errfr,Zrynavr GE    07:40    08:55   Znva Pnzchf GF200       25     5        20
+NCCNPNQ 111  006 Errfr,Zrynavr GE    12:40    01:55   Pnalba Pb   PLAP_186    25     14       11
+NCCNPNQ 111  007 Zvyyre,Wraal  GE    01:40    02:55   Znva Pnzchf GF200       25     10       15
+NCCNPNQ 111  008 Errfr,Zrynavr E     06:00    09:00   Znva Pnzchf GF200       25     8        17
+NCCNPNQ 130  051 Oneeba,Fpbgg  ZJS   08:40    09:30   Znva Pnzchf GF104       30     27       3
+NCCNPNQ 130  052 Ehgyrqtr,Zvxr ZJS   08:40    09:30   Znva Pnzchf ZG104       20     1        19
+NCCNPNQ 130  053 Ehgyrqtr,Zvxr ZJS   08:40    09:30   Pnalba Pb   PLAP_184    20     3        17
+NCCNPNQ 136  001 Zvyyre,Wraal  ZJS   07:40    08:30   Znva Pnzchf GF200       25     7        18
+NCCNPNQ 136  002 Uhfxrl,Tnlyn  ZJS   07:40    08:30   Znva Pnzchf NG205       30     9        21
+NCCNPNQ 136  003 Ehgyrqtr,Zvxr ZJS   12:40    01:30   Znva Pnzchf RG108       20     1        19
+NCCNPNQ 136  004 Ehgyrqtr,Zvxr ZJS   12:40    01:30   Pnalba Pb   PLAP_231    20     7        13
+NCCNPNQ 137  081 Zbra,Tnel Q   ZJ    07:40    08:30   Znva Pnzchf TEQUFR 104  20     0        20
+NCCNPNQ 138  001 Zvyyre,Wraal  ZJS   10:40    11:30   Znva Pnzchf NG211       25     15       10
+NCCNPNQ 138  002 Zvyyre,Wraal  ZJS   01:40    02:30   Znva Pnzchf NG211       25     13       12
+NCCNPNQ 139  001 Oeraana,Wnzrf ZJS   03:40    04:30   Znva Pnzchf GF200       20     8        12
+NCCNPNQ 139  002 Oeraana,Wnzrf GE    10:40    11:55   Znva Pnzchf GF200       20     25       0
+NCCNPNQ 139  003 Wbmjvnx,Wnzrf ES    03:00    04:20   Znva Pnzchf RG335       20     3        17
+NCCNPNQ 141  001 Oeraana,Wnzrf ZJS   02:40    03:30   Znva Pnzchf GF200       20     10       10
+NCCNPNQ 181  001 Orna,Natryn F ZJS   07:40    08:30   Znva Pnzchf GF202       20     9        11
+NCCNPNQ 181  002 Errfr,Zrynavr G     06:00    09:00   Znva Pnzchf GF202       20     5        15
+NCCNPNQ 181  425 Errfr,Zrynavr       01:00    01:00   RYRPPNZCHF              10     0        10
+NCCNPNQ 221  001 Urarl,Wvyy Zn ZJS   12:40    01:30   Znva Pnzchf GF200       30     22       8
+NCCNPNQ 221  002 Trvfyre,Gnzne ZG    06:00    07:30   Znva Pnzchf ZG103       30     4        26
+NCCERA 101   001 Nenzoneev,Tne       01:00    01:00   Znva Pnzchf             25     2        23
+NEG 100      001 ZpRyubfr-Rvth J     06:00    09:00   Znva Pnzchf ZC101       170    120       50
+NEG 100      002 Fpbgg,Qnaal G GE    01:40    02:55   Znva Pnzchf ZC101       170    170       0
+NEG 100      003 Fpbgg,Qnaal G GE    03:15    04:30   Znva Pnzchf ZC101       170    94       76
+NEG 100      004 Crgrefra,Xngu ZJS   03:40    04:30   Znva Pnzchf ZC101       170    100       70
+NEG 100      070 Fpbgg,Qnaal G F     08:00    11:00   Znva Pnzchf ZC101       94     47       47
+NEG 100      425 Zvyyre,Zreyva       01:00    01:00   RYRPPNZCHF              50     50       0
+NEG 100      426 Zvyyre,Zreyva       01:00    01:00   RYRPPNZCHF              50     50       0
+NEG 100      726 Svfure,Oeraqn ZJ    09:15    10:30   Pnalba Pb   PLAP_237    40     40       0
+NEG 101      001 Gheare,Yrr Na ZJS   10:40    11:30   Znva Pnzchf ZT113       150    150       0
+NEG 101      002 Gheare,Yrr Na ZJS   12:40    01:30   Znva Pnzchf ZT113       150    150       0
+NEG 101      725 Oebja,Xnera U E     06:00    09:00   Pnalba Pb   PLAP_235    40     40       0
+NEG 102      725 Oebja,Xnera U ZJ    10:40    11:55   Pnalba Pb   PLAP_235    40     8        32
+NEG 105      001 Oynxrfyrr,Ynh GE    01:40    02:55   Znva Pnzchf ZC106       88     53       35
+NEG 105      002 Fgnss         ZJ    08:40    11:30   Znva Pnzchf CNN112      22     22       0
+NEG 105      425 Zvyyre,Zreyva       01:00    01:00   RYRPPNZCHF              25     25       0
+NEG 105      426 Zvyyre,Zreyva       01:00    01:00   RYRPPNZCHF              25     25       0
+NEG 105      500 Fgnss         G     06:15    09:45   Zga Uz NSO  ZUNSO_310   25     10       15
+NEG 105      550 Unvtug,Ivpgbe J     06:00    09:00   Tbjra Svryq TS521#005   25     25       0
+NEG 105      N   Fgnss         GE    03:15    04:30   Znva Pnzchf CNN107      22     22       0
+NEG 105      O   Fgnss         GE    03:15    04:30   Znva Pnzchf CNN112      22     13       9
+NEG 105      P   Fgnss         GE    03:15    04:30   Znva Pnzchf CNN116      22     12       10
+NEG 105      Q   Fgnss         GE    03:15    04:30   Znva Pnzchf YN255       22     6        16
+NEG 106      001 Fgnss         GE    01:40    04:30   Znva Pnzchf CNN109      14     14       0
+NEG 106      002 Oynxrfyrr,Ynh ZJ    02:40    03:30   Znva Pnzchf ZC108       42     42       0
+NEG 106      N   Fgnss         ZJ    03:40    05:30   Znva Pnzchf CNN109      14     14       0
+NEG 106      O   Fgnss         ZJ    03:40    05:30   Znva Pnzchf CNN112      14     14       0
+NEG 106      P   Fgnss         ZJ    03:40    05:30   Znva Pnzchf YN255       14     14       0
+NEG 111      001 Fgnss         ZJ    02:40    05:30   Znva Pnzchf CNN110      18     18       0
+NEG 111      002 Ebfvar,Tnel   ZJ    08:40    11:30   Znva Pnzchf CNN110      18     18       0
+NEG 111      003 Dhvaa-Ohqqr,A ZJ    11:40    02:30   Znva Pnzchf CNN108      18     18       0
+NEG 111      004 Dhvaa-Ohqqr,A ZJ    02:40    05:30   Znva Pnzchf CNN108      18     18       0
+NEG 111      005 Ebfvar,Tnel   ZJ    11:40    02:30   Znva Pnzchf CNN110      18     18       0
+NEG 111      006 Fgnss         GE    09:15    12:05   Znva Pnzchf CNN108      18     18       0
+NEG 111      007 Fgnss         GE    01:40    04:30   Znva Pnzchf CNN108      18     18       0
+NEG 111      572 Byfra,Tnel Y        01:00    01:00   FXLIVRJ_UF              0      0        0
+NEG 111      575 Pbaabyyl,Tyra       01:00    01:00   ANZCN_UF                0      0        0
+NEG 112      001 Lbhat,Evpuneq ZJ    08:40    11:30   Znva Pnzchf CNN108      18     18       0
+NEG 112      002 Sneyrl,Oeraqb GE    06:00    09:00   Znva Pnzchf CNN108      18     8        10
+NEG 117      001 Ryqre,Gubznf  ZJ    08:40    11:30   Znva Pnzchf YN255       20     20       0
+NEG 117      002 Fgnss         ZJ    06:00    09:00   Znva Pnzchf YN255       20     20       0
+NEG 117      003 Onpba,Fgrcuna JS    11:40    02:30   Znva Pnzchf YN255       20     20       0
+NEG 118      001 Ryqre,Gubznf  GE    09:15    12:05   Znva Pnzchf YN257       16     16       0
+NEG 118      002 Ryqre,Gubznf  GE    01:40    04:30   Znva Pnzchf YN257       16     16       0
+NEG 120      001 Sheybat,Xvefg E     12:15    01:05   Znva Pnzchf R109        75     40       35
+NEG 203      001 Senapvf,Wbua  ZJ    08:40    11:30   Znva Pnzchf YN254       20     20       0
+NEG 203      002 Senapvf,Wbua  GE    09:15    12:05   Znva Pnzchf YN255       20     20       0
+NEG 209      001 Fgnss         ZJ    11:40    02:30   Znva Pnzchf CNN105      15     15       0
+NEG 209      002 Fgnss         ZJ    02:40    05:30   Znva Pnzchf CNN105      15     15       0
+NEG 210      001 Fgnss         GE    09:15    12:05   Znva Pnzchf CNN105      15     6        0
+NEG 211      001 Oynaxrafuvc,W GE    09:15    12:05   Znva Pnzchf CNN110      16     16       0
+NEG 211      002 Oynaxrafuvc,W GE    01:40    04:30   Znva Pnzchf CNN110      16     16       0
+NEG 215      001 Fgnss         GE    01:40    04:30   Znva Pnzchf CNN111      16     16       0
+NEG 215      002 Fgnss         GE    09:15    12:05   Znva Pnzchf CNN111      16     16       0
+NEG 217      001 Oynaxrafuvc,W ZJ    11:40    02:30   Znva Pnzchf CNN107      18     15       0
+NEG 221      001 Fgnss         ZJ    08:40    11:30   Znva Pnzchf YN157       16     14       0
+NEG 221      002 Fgnss         GE    01:40    04:30   Znva Pnzchf YN157       16     13       0
+NEG 222      001 Fgnss         ZJ    08:40    11:30   Znva Pnzchf YN157       16     2        0
+NEG 222      002 Fgnss         GE    01:40    04:30   Znva Pnzchf YN157       16     3        0
+NEG 225      001 Gnlybe,Ebanyq ZJ    08:40    11:30   Znva Pnzchf YN150       15     15       0
+NEG 225      002 Gnlybe,Ebanyq ZJ    02:40    05:30   Znva Pnzchf YN150       15     15       0
+NEG 225      003 Ohqqr,Wnzrf N GE    09:15    12:05   Znva Pnzchf N1          12     12       0
+NEG 225      004 Ohqqr,Wnzrf N GE    01:40    04:30   Znva Pnzchf N1          12     12       0
+NEG 231      001 Sbk,Senapvf T ZJ    08:40    11:30   Znva Pnzchf YN152       14     14       0
+NEG 231      002 Sbk,Senapvf T ZJ    11:40    02:30   Znva Pnzchf YN152       14     14       0
+NEG 231      003 Fgnss         GE    09:15    12:05   Znva Pnzchf CNN109      14     14       0
+NEG 251      001 Fzvgu,Oerag   G     09:15    12:05   Znva Pnzchf YN251       15     15       0
+NEG 251      002 Fzvgu,Oerag   G     01:40    04:30   Znva Pnzchf YN251       15     15       0
+NEG 251      003 ZpArvy,Yneel  E     01:40    04:30   Znva Pnzchf YN251       15     15       0
+NEG 251      004 ZpRyubfr-Rvth Z     08:40    11:30   Znva Pnzchf YN251       15     15       0
+NEG 251      N   Fzvgu,Oerag   E     09:15    12:05   Znva Pnzchf YN250       15     15       0
+NEG 251      O   Fzvgu,Oerag   E     01:40    04:30   Znva Pnzchf YN250       15     15       0
+NEG 251      P   ZpArvy,Yneel  G     01:40    04:30   Znva Pnzchf YN250       15     15       0
+NEG 251      Q   ZpRyubfr-Rvth J     08:40    11:30   Znva Pnzchf YN250       15     15       0
+NEG 255      001 Pneire,Qjnvar ZJ    09:40    11:30   Znva Pnzchf CNN107      18     11       7
+NEG 270      001 Fuvaa,Abeiny  G     06:00    09:00   Znva Pnzchf YN209       25     21       4
+NEG 290      001 Pneire,Qjnvar ZJS   08:40    09:30   Znva Pnzchf ZC207       40     40       0
+NEG 294      550 Ubbcrf,Tnlr Y F     09:00    04:00   Tbjra Svryq TS521#005   25     10       5
+NEG 294      551 Ubbcrf,Tnlr Y F     09:00    04:00   Tbjra Svryq TS521#005   25     4        11
+NEG 294      725 Oebja,Xnera U F     08:00    05:00   Pnalba Pb   PLAP_235    30     11       8
+NEG 294      727 Oebja,Xnera U F     08:00    05:00   Pnalba Pb   PLAP_235    30     6        17
+NEG 297      002 Urre,Yvfn     GE    04:40    05:55   Znva Pnzchf YN209       20     13       0
+NEG 300      725 Unvtug,Ivpgbe G     05:30    09:30   ZREVQVNAUF  ZREUF_N2    20     13       7
+NEG 309      001 Fgnss         GE    09:15    12:05   Znva Pnzchf CNN105      15     8        0
+NEG 311      001 Fgnss         ZJ    08:40    11:30   Znva Pnzchf CNN103      15     14       1
+NEG 311T     001 Fgnss         ZJ    08:40    11:30   Znva Pnzchf CNN103      15     0        1
+NEG 315      001 Ebfvar,Tnel   GE    09:15    12:05   Znva Pnzchf CNN103      15     12       1
+NEG 315T     001 Ebfvar,Tnel   GE    09:15    12:05   Znva Pnzchf CNN103      15     2        1
+NEG 317      001 Oynaxrafuvc,W ZJ    11:40    02:30   Znva Pnzchf CNN107      18     3        0
+NEG 321      001 Unayba,Urngur GE    09:15    11:05   Znva Pnzchf CNN116      20     21       0
+NEG 321      002 Unayba,Urngur JS    09:15    11:05   Znva Pnzchf CNN116      20     3        17
+NEG 321      N   Unayba,Urngur GE    11:10    12:05   Znva Pnzchf CNN116      20     11       9
+NEG 321      O   Unayba,Urngur JS    11:10    12:05   Znva Pnzchf CNN116      20     1        19
+NEG 321T     001 Unayba,Urngur GE    09:15    11:05   Znva Pnzchf CNN116      20     0        0
+NEG 321T     N   Unayba,Urngur GE    11:10    12:05   Znva Pnzchf CNN116      20     0        9
+NEG 325      001 Gnlybe,Ebanyq GE    01:40    04:30   Znva Pnzchf YN150       15     9        0
+NEG 325      002 Ohqqr,Wnzrf N ZJ    02:40    05:30   Znva Pnzchf N1          12     6        1
+NEG 325T     001 Gnlybe,Ebanyq GE    01:40    04:30   Znva Pnzchf YN150       15     0        0
+NEG 325T     002 Ohqqr,Wnzrf N ZJ    02:40    05:30   Znva Pnzchf N1          12     0        1
+NEG 334      001 Sbk,Senapvf T GE    01:40    04:30   Znva Pnzchf YN152       14     10       0
+NEG 341      001 ZpArvy,Yneel  E     09:15    12:05   Znva Pnzchf YN251       15     15       0
+NEG 341      N   ZpArvy,Yneel  G     09:15    12:05   Znva Pnzchf YN250       15     15       0
+NEG 344      001 Fzvgu,Oerag   S     11:40    02:30   Znva Pnzchf YN251       15     15       0
+NEG 344      N   Fzvgu,Oerag   J     11:40    02:30   Znva Pnzchf             15     15       0
+NEG 344T     001 Fzvgu,Oerag   S     11:40    02:30   Znva Pnzchf YN251       15     0        0
+NEG 344T     N   Fzvgu,Oerag   J     11:40    02:30   Znva Pnzchf             15     0        0
+NEG 351      001 Unayba,Urngur JS    12:40    03:30   Znva Pnzchf CNN116      20     6        12
+NEG 351T     001 Unayba,Urngur JS    12:40    03:30   Znva Pnzchf CNN116      20     2        12
+NEG 361      001 Pnezna,Jvyyvn GE    09:15    12:05   Znva Pnzchf CNN112      20     20       0
+NEG 362      001 Pnezna,Jvyyvn ZJ    08:40    11:30   Znva Pnzchf CNN120      15     14       1
+NEG 371      001 Arjzna,Avpuby GE    01:40    02:55   Znva Pnzchf YN209       20     20       0
+NEG 371T     001 Arjzna,Avpuby GE    01:40    02:55   Znva Pnzchf YN209       20     0        0
+NEG 388      001 Onpba,Fgrcuna GE    09:15    12:05   Znva Pnzchf YN254       16     16       0
+NEG 388      002 Onpba,Fgrcuna GE    01:40    04:30   Znva Pnzchf YN254       16     16       0
+NEG 397      001 ZpArvy,Yneel  JS    08:40    11:30   Znva Pnzchf YN251       12     12       0
+NEG 397      002 Arjzna,Avpuby GE    09:15    10:30   Znva Pnzchf YN209       20     15       0
+NEG 397      003 Urre,Yvfn     GE    10:40    11:55   Znva Pnzchf YN209       20     13       7
+NEG 409      001 Fgnss         GE    09:15    12:05   Znva Pnzchf CNN105      15     1        0
+NEG 410      001 Fgnss         J     02:40    05:30   Znva Pnzchf YN251       20     8        12
+NEG 411      001 Fuhegyrss-Lbh JS    11:40    02:30   Znva Pnzchf CNN103      18     3        15
+NEG 411T     001 Fuhegyrss-Lbh JS    11:40    02:30   Znva Pnzchf CNN103      18     2        16
+NEG 415      001 Fuhegyrss-Lbh JS    11:40    02:30   Znva Pnzchf CNN103      18     8        10
+NEG 415T     001 Fuhegyrss-Lbh JS    11:40    02:30   Znva Pnzchf CNN103      18     1        17
+NEG 425      001 Gnlybe,Ebanyq GE    01:40    04:30   Znva Pnzchf YN150       15     5        0
+NEG 425      002 Ohqqr,Wnzrf N ZJ    02:40    05:30   Znva Pnzchf N1          12     5        1
+NEG 425T     001 Gnlybe,Ebanyq GE    01:40    04:30   Znva Pnzchf YN150       15     1        0
+NEG 425T     002 Ohqqr,Wnzrf N ZJ    02:40    05:30   Znva Pnzchf N1          12     0        1
+NEG 431      001 Sbk,Senapvf T GE    01:40    04:30   Znva Pnzchf YN152       14     4        0
+NEG 441      001 Oynxrfyrr,Ynh Z     11:40    02:30   Znva Pnzchf YN251       15     8        0
+NEG 444      001 Oynxrfyrr,Ynh Z     11:40    02:30   Znva Pnzchf YN251       15     7        0
+NEG 450      001 Gheare,Yrr Na ZJS   10:40    11:30   Znva Pnzchf ZT113       3      3        0
+NEG 450      002 Gheare,Yrr Na ZJS   12:40    01:30   Znva Pnzchf ZT113       3      3        0
+NEG 461      001 Pnezna,Jvyyvn ZJ    11:40    02:30   Znva Pnzchf CNN112      15     7        0
+NEG 462      001 Pnezna,Jvyyvn ZJ    11:40    02:30   Znva Pnzchf CNN112      15     7        0
+NEG 465      001 Pnezna,Jvyyvn ZJ    11:40    02:30   Znva Pnzchf CNN112      15     2        0
+NEG 483      001 Fgnss         ZJ    11:40    02:30   Znva Pnzchf YN257       15     14       1
+NEG 494      550 Ubbcrf,Tnlr Y F     09:00    04:00   Tbjra Svryq TS521#005   25     10       5
+NEG 494      551 Ubbcrf,Tnlr Y F     09:00    04:00   Tbjra Svryq TS521#005   25     10       11
+NEG 494      725 Oebja,Xnera U F     08:00    05:00   Pnalba Pb   PLAP_235    30     11       8
+NEG 494      726 Jvyyvnzf,Wraa F     09:00    05:00   Pnalba Pb   PLAP_229    25     25       0
+NEG 494      727 Oebja,Xnera U F     08:00    05:00   Pnalba Pb   PLAP_235    30     7        17
+NEG 495      001 Fgrryr,Fpbgg  GE    06:00    09:00   Znva Pnzchf YN254       20     15       5
+NEG 496      002 Oynaxrafuvc,W       01:00    01:00   Znva Pnzchf             0      1        0
+NEG 497      001 Gheare,Yrr Na ZJS   02:40    03:30   Znva Pnzchf YN209       25     16       9
+NEG 497      002 Urre,Yvfn     GE    04:40    05:55   Znva Pnzchf YN209       20     4        0
+NEG 498      001 Arjzna,Avpuby E     06:00    09:00   Znva Pnzchf YN209       15     15       0
+NEG 498      002 Fuhegyrss-Lbh S     08:40    11:30   Znva Pnzchf CNN120      15     15       0
+NEG 499      001 Urre,Yvfn     J     03:40    06:10   Znva Pnzchf YN209       20     12       8
+NEG 534      001 Sbk,Senapvf T GE    01:40    04:30   Znva Pnzchf YN152       14     0        0
+NEG 578      001 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      0        5
+NEG 580      001 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      0        5
+NEG 580      002 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      1        4
+NEG 581      001 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      0        5
+NEG 581      002 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      0        5
+NEG 583      001 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      0        5
+NEG 585      001 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      0        5
+NEG 585      002 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      0        5
+NEG 591      001 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      0        5
+NEG 593      001 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      0        5
+NEG 593      002 Fuhegyrss-Lbh       01:00    01:00   Znva Pnzchf             5      0        5
+NEG 597      001 Urre,Yvfn     GE    04:40    05:55   Znva Pnzchf YN209       20     3        0
+NEG 597      002 Arjzna,Avpuby GE    09:15    10:30   Znva Pnzchf YN209       2      1        1
+NGUYNQZ 505  001 Yrfgre,Zvxr   G     07:00    09:50   Znva Pnzchf             20     2        18
+NHGBOQ 101   001 Cnexr,Puneyrf QNVY  10:00    03:00   Znva Pnzchf ZG100       15     13       2
+NHGBOQ 151   041 Cnexr,Puneyrf GE    07:40    09:30   Znva Pnzchf             15     13       2
+NHGBOQ 151   041 Cnexr,Puneyrf ZJS   07:40    08:30   Znva Pnzchf ZG104       15     13       2
+NHGBOQ 151   077 Fgnss         QNVY  10:00    03:00   ANZCN_UF    ZG100       10     0        10
+NHGBOQ 161   042 Cnexr,Puneyrf GE    07:40    09:30   Znva Pnzchf ZG104       15     13       2
+NHGBOQ 161   042 Cnexr,Puneyrf ZJS   07:40    08:30   Znva Pnzchf             15     13       2
+NHGBOQ 161   077 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBOQ 162   077 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBOQ 171   043 Cnexr,Puneyrf QNVY  07:40    09:30   Znva Pnzchf ZG104       15     12       3
+NHGBOQ 171   077 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBOQ 172   077 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBOQ 191   044 Cnhy,Oevna Q  QNVY  07:40    09:30   Znva Pnzchf NG100       15     15       0
+NHGBOQ 191   077 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBOQ 201   077 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBOQ 201   081 Cnhy,Oevna Q  QNVY  10:30    03:00   Znva Pnzchf ZG100       15     8        7
+NHGBOQ 251   044 Cnexr,Puneyrf GE    07:40    08:40   Znva Pnzchf ZG104       15     8        7
+NHGBOQ 261   043 Cnhy,Oevna Q  QNVY  07:40    09:30   Znva Pnzchf NG100       15     8        7
+NHGBGRP 197  077 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBGRP 197  177 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBGRP 197  277 Fgnss               01:00    01:00   ANZCN_UF                10     0        10
+NHGBGRP 197  377 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBGRP 200  081 Znegvarm,Ebaa ZJS   09:40    10:30   Znva Pnzchf NG122       32     26       6
+NHGBGRP 200  081 Arny,Naqerj C ZJS   09:40    10:30   Znva Pnzchf NG122       32     26       6
+NHGBGRP 200  082 Znegvarm,Ebaa ZJS   09:40    10:30   Znva Pnzchf NG122       32     8        24
+NHGBGRP 200  082 Arny,Naqerj C ZJS   09:40    10:30   Znva Pnzchf NG122       32     8        24
+NHGBGRP 215  081 Znegvarm,Ebaa GE    10:40    01:30   Znva Pnzchf NG122       32     26       6
+NHGBGRP 215  081 Arny,Naqerj C GE    10:40    01:30   Znva Pnzchf NG122       32     26       6
+NHGBGRP 215  082 Arny,Naqerj C GE    10:40    01:30   Znva Pnzchf NG122       32     0        32
+NHGBGRP 215  082 Znegvarm,Ebaa GE    10:40    01:30   Znva Pnzchf NG122       32     0        32
+NHGBGRP 220  081 Arny,Naqerj C GE    01:40    02:55   Znva Pnzchf NG122       32     26       6
+NHGBGRP 220  081 Znegvarm,Ebaa GE    01:40    02:55   Znva Pnzchf NG122       32     26       6
+NHGBGRP 220  082 Znegvarm,Ebaa GE    01:40    02:55   Znva Pnzchf NG122       32     0        32
+NHGBGRP 220  082 Arny,Naqerj C GE    01:40    02:55   Znva Pnzchf NG122       32     0        32
+NHGBGRP 230  077 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBGRP 240  077 Arff,Anapl Wb       01:00    01:00   ANZCN_UF                10     0        10
+NHGBGRP 240  081 Qbhtugl,Zvpun ZJS   12:40    02:30   Znva Pnzchf NG122       32     0        32
+NHGBGRP 240  082 Unyy,Yrr Rqjn ZJS   12:40    02:30   Znva Pnzchf NG122       32     25       7
+NHGBGRP 240  082 Qbhtugl,Zvpun ZJS   12:40    02:30   Znva Pnzchf NG122       32     25       7
+NHGBGRP 255  081 Qbhtugl,Zvpun ZJS   02:40    04:30   Znva Pnzchf NG122       32     0        32
+NHGBGRP 255  082 Unyy,Yrr Rqjn ZJS   02:40    04:30   Znva Pnzchf NG122       32     25       7
+NHGBGRP 255  082 Qbhtugl,Zvpun ZJS   02:40    04:30   Znva Pnzchf NG122       32     25       7
+NHGBGRP 256  081 Tnvarf,Zneyva ZJS   02:40    03:30   Znva Pnzchf NG113       18     0        18
+NHGBGRP 256  082 Tnvarf,Zneyva ZJS   02:40    03:30   Znva Pnzchf NG113       32     10       22
+NHGBGRP 257  081 Tnvarf,Zneyva GE    10:40    01:30   Znva Pnzchf NG113       18     3        15
+NHGBGRP 257  082 Tnvarf,Zneyva GE    10:40    01:30   Znva Pnzchf NG113       18     9        9
+NHGBGRP 258  081 Tnvarf,Zneyva ZJS   10:40    12:30   Znva Pnzchf NG113       18     4        14
+NHGBGRP 258  082 Tnvarf,Zneyva ZJS   10:40    12:30   Znva Pnzchf NG113       18     0        18
+NHGBGRP 259  081 Tnvarf,Zneyva ZJS   12:40    02:30   Znva Pnzchf NG113       18     3        15
+NHGBGRP 259  082 Tnvarf,Zneyva ZJS   12:40    02:30   Znva Pnzchf NG113       18     3        15
+NHGBGRP 260  081 Tnvarf,Zneyva GE    01:40    03:30   Znva Pnzchf NG113       18     0        18
+NHGBGRP 260  082 Tnvarf,Zneyva GE    01:40    03:30   Znva Pnzchf NG113       18     6        12
+OVBY 100     001 Elpureg,Ebore ZJS   09:40    10:30   Znva Pnzchf YN106       254    195       59
+OVBY 100     002 Ybafqnyr,Whql GE    10:40    11:55   Znva Pnzchf YN106       254    162       92
+OVBY 100     003 Fgnss         GE    06:00    07:15   Znva Pnzchf ZC108       75     36       39
+OVBY 100     070 Wbarf,Eboreg  F     10:00    01:00   Znva Pnzchf R109        52     31       21
+OVBY 100     425 Ybafqnyr,Whql       01:00    01:00   RYRPPNZCHF              20     20       0
+OVBY 100     500 Zngfba,Puneyr G     06:15    09:45   Zga Ubzr UF ZUUF_25     30     9        21
+OVBY 100     584 Gvccvat,Fgrir       01:00    01:00   OBENU_UF                5      0        5
+OVBY 100     585 Gvccvat,Fgrir       01:00    01:00   OBENU_UF                5      0        5
+OVBY 100     725 Xbbo,Znevyla  GE    09:30    10:45   Pnalba Pb   PLAP_253    24     14       10
+OVBY 100     726 Cnhyrl,Cngevp G     06:00    07:15   Pnalba Pb   PLAP_253    24     24       0
+OVBY 100     726 Cnhyrl,Cngevp E     06:00    07:15   Pnalba Pb   PLAP_238    24     24       0
+OVBY 100     N   Fgnss         G     07:40    09:30   Znva Pnzchf FA202       26     22       4
+OVBY 100     O   Fgnss         G     09:40    11:30   Znva Pnzchf FA202       26     26       0
+OVBY 100     OBE Gvccvat,Fgrir       01:00    01:00   OBENU_UF                5      0        5
+OVBY 100     OE2 Gvccvat,Fgrir       01:00    01:00   OBENU_UF                35     0        35
+OVBY 100     P   Fgnss         G     11:40    01:30   Znva Pnzchf FA202       26     26       0
+OVBY 100     Q   Fgnss         J     07:40    09:30   Znva Pnzchf FA202       26     26       0
+OVBY 100     QR  Ybafqnyr,Whql       01:00    01:00   RYRPPNZCHF              20     20       0
+OVBY 100     R   Fgnss         J     01:40    03:30   Znva Pnzchf FA202       26     26       0
+OVBY 100     RN  Fgnss         G     07:40    09:30   Znva Pnzchf FA202       26     23       3
+OVBY 100     RO  Fgnss         J     07:40    09:30   Znva Pnzchf FA202       26     4        22
+OVBY 100     RP  Fgnss         E     07:40    09:30   Znva Pnzchf FA202       26     9        17
+OVBY 100     S   Fgnss         J     03:40    05:30   Znva Pnzchf FA202       26     19       7
+OVBY 100     T   Elpureg,Ebore E     09:40    11:30   Znva Pnzchf FA202       26     26       0
+OVBY 100     U   Elpureg,Ebore E     11:40    01:30   Znva Pnzchf FA202       26     21       5
+OVBY 100     V   Fgnss         S     07:40    09:30   Znva Pnzchf FA202       26     4        22
+OVBY 100     YZU Zngfba,Puneyr E     06:15    09:45   Zga Ubzr UF ZUUF_25     30     9        21
+OVBY 100     Z   Fgnss         G     01:40    03:30   Znva Pnzchf FA202       26     26       0
+OVBY 100     A   Fgnss         G     03:40    05:30   Znva Pnzchf FA202       26     22       4
+OVBY 100     B   Fgnss         G     05:40    07:30   Znva Pnzchf FA202       26     5        21
+OVBY 100     C   Fgnss         J     09:40    11:30   Znva Pnzchf FA202       26     26       0
+OVBY 100     D   Fgnss         E     07:40    09:30   Znva Pnzchf FA202       26     26       0
+OVBY 100     E   Fgnss         E     01:40    03:40   Znva Pnzchf FA202       26     26       0
+OVBY 100     F   Fgnss         E     03:40    05:30   Znva Pnzchf FA202       26     11       15
+OVBY 100     FN  Bez,Wrnaar Zn F     08:00    09:50   Znva Pnzchf FA202       26     19       7
+OVBY 100     FP  Bez,Wrnaar Zn F     01:15    03:05   Znva Pnzchf FA202       26     12       14
+OVBY 100     G   Fgnss         E     05:40    07:30   Znva Pnzchf FA202       26     8        18
+OVBY 100     H   Fgnss         S     09:40    11:30   Znva Pnzchf FA202       26     11       15
+OVBY 100     KK  Xbbo,Znevyla  E     12:30    02:20   Pnalba Pb   PLAP_229    24     14       10
+OVBY 100     LL  Cnhyrl,Cngevp E     07:30    09:30   Pnalba Pb   PLAP_229    24     24       0
+OVBY 107     001 Tnooneq,Znevr ZJ    04:40    05:55   Znva Pnzchf ZC118       60     13       47
+OVBY 107     425 Tnooneq,Znevr       01:00    01:00   RYRPPNZCHF              15     15       0
+OVBY 107     425 Cnhyrl,Cngevp       01:00    01:00   RYRPPNZCHF              15     15       0
+OVBY 107     500 Pehfba,Xvzore Z     06:15    09:45   Zga Uz NSO              25     3        22
+OVBY 107     N   Tnooneq,Znevr Z     06:00    08:00   Znva Pnzchf FA336       12     10       2
+OVBY 107     O   Gnlybe,Avpbyr J     07:40    09:30   Znva Pnzchf FA337       30     3        27
+OVBY 107     QR  Cnhyrl,Cngevp       01:00    01:00   RYRPPNZCHF              15     15       0
+OVBY 107     QR  Tnooneq,Znevr       01:00    01:00   RYRPPNZCHF              15     15       0
+OVBY 107     YZU Pehfba,Xvzore J     06:15    09:45   Zga Ubzr UF ZUUF_25     25     3        22
+OVBY 191     001 Qbhtynf,Qbggl ZJS   12:40    01:30   Znva Pnzchf YN106       216    215       1
+OVBY 191     N   Fgnss         G     10:40    01:30   Znva Pnzchf FA205       24     24       0
+OVBY 191     O   Fgnss         G     01:40    04:30   Znva Pnzchf FA205       24     24       0
+OVBY 191     P   Fgnss         J     08:40    11:30   Znva Pnzchf FA205       24     24       0
+OVBY 191     Q   Fgnss         J     01:40    04:30   Znva Pnzchf FA205       24     24       0
+OVBY 191     R   Fgnss         E     08:40    11:30   Znva Pnzchf FA205       24     24       0
+OVBY 191     S   Fgnss         E     11:40    02:30   Znva Pnzchf FA205       24     24       0
+OVBY 191     T   Fgnss         E     02:40    05:30   Znva Pnzchf FA205       24     24       0
+OVBY 191     U   Fgnss         S     08:40    11:30   Znva Pnzchf FA205       24     24       0
+OVBY 191     V   Fgnss         J     04:40    07:30   Znva Pnzchf FA205       24     24       0
+OVBY 192     001 Frecr,Znepryb ZJS   10:40    11:30   Znva Pnzchf ZC101       125    95       30
+OVBY 192     001 Eboregfba,Vna ZJS   10:40    11:30   Znva Pnzchf ZC101       125    95       30
+OVBY 192     N   Fgnss         G     11:40    02:30   Znva Pnzchf FA200       24     24       0
+OVBY 192     O   Fgnss         G     02:40    05:30   Znva Pnzchf FA200       24     24       0
+OVBY 192     P   Fgnss         J     12:40    03:30   Znva Pnzchf FA200       24     24       0
+OVBY 192     Q   Fgnss         J     03:40    06:30   Znva Pnzchf FA200       24     23       1
+OVBY 198     001 Ybat,Wnzrf N  ZJ    01:40    02:30   Znva Pnzchf ZC201       56     33       23
+OVBY 198     001 Zhatre,Wnzrf  ZJ    01:40    02:30   Znva Pnzchf ZC201       56     33       23
+OVBY 205     001 Pragnaav,Ehff ZJS   12:40    01:30   Znva Pnzchf R112        120    116       4
+OVBY 205     N   Pragnaav,Ehff ZJ    09:40    10:30   Znva Pnzchf FA247       22     23       0
+OVBY 205     O   Pragnaav,Ehff ZJ    10:40    11:55   Znva Pnzchf FA247       22     23       0
+OVBY 205     P   Pragnaav,Ehff ZJ    01:40    02:30   Znva Pnzchf FA247       22     24       0
+OVBY 205     Q   Pragnaav,Ehff ZJ    02:40    03:30   Znva Pnzchf FA247       22     23       0
+OVBY 205     R   Pragnaav,Ehff ZJ    03:40    04:30   Znva Pnzchf FA247       22     23       0
+OVBY 227     001 Qhsgl,Nyserq  ZJS   10:40    11:30   Znva Pnzchf YN106       280    279       1
+OVBY 227     002 ZpPybfxrl,Evp GE    12:15    01:30   Znva Pnzchf YN106       278    278       0
+OVBY 227     003 Xbbo,Znevyla  GE    05:30    06:45   Znva Pnzchf YN106       186    173       13
+OVBY 227     004 Xbbo,Znevyla  ZJS   01:40    02:30   Znva Pnzchf R112        60     55       5
+OVBY 227     425 ZpPybfxrl,Evp       01:00    01:00   RYRPPNZCHF              20     23       0
+OVBY 227     426 ZpPybfxrl,Evp       01:00    01:00   RYRPPNZCHF              20     20       0
+OVBY 227     550 Crqrefba,Qniv G     06:00    09:00   Tbjra Svryq TS521#006   30     30       0
+OVBY 227     725 Xbbo,Znevyla  GE    11:00    12:15   Pnalba Pb   PLAP_230    48     48       0
+OVBY 227     726 Tnooneq,Znevr E     06:00    07:45   Pnalba Pb   PLAP_205    24     24       0
+OVBY 227     726 Tnooneq,Znevr G     06:00    06:45   Pnalba Pb   PLAP_229    24     24       0
+OVBY 227     N   Fgnss         G     08:40    11:30   Znva Pnzchf FA336       30     30       0
+OVBY 227     O   Fgnss         G     08:40    11:30   Znva Pnzchf FA337       32     32       0
+OVBY 227     P   Fgnss         G     11:40    02:40   Znva Pnzchf FA336       30     30       0
+OVBY 227     Q   Fgnss         G     11:40    02:40   Znva Pnzchf FA337       32     32       0
+OVBY 227     QR  ZpPybfxrl,Evp       01:00    01:00   RYRPPNZCHF              20     23       0
+OVBY 227     QR2 ZpPybfxrl,Evp       01:00    01:00   RYRPPNZCHF              20     20       0
+OVBY 227     R   Fgnss         J     07:40    10:30   Znva Pnzchf FA337       32     32       0
+OVBY 227     S   Fgnss         J     07:40    10:30   Znva Pnzchf FA336       30     30       0
+OVBY 227     T   Fgnss         E     11:40    02:30   Znva Pnzchf FA336       30     30       0
+OVBY 227     U   Fgnss         E     11:40    02:30   Znva Pnzchf FA337       32     32       0
+OVBY 227     V   Fgnss         S     07:40    10:30   Znva Pnzchf FA337       32     32       0
+OVBY 227     W   Fgnss         J     04:40    06:30   Znva Pnzchf FA336       30     26       4
+OVBY 227     X   Fgnss         G     02:40    05:30   Znva Pnzchf FA337       32     32       0
+OVBY 227     Y   Fgnss         G     02:40    05:30   Znva Pnzchf FA336       30     30       0
+OVBY 227     YTS1 Crqrefba,Qniv E     06:00    09:00   Tbjra Svryq TS521#005   30     30       0
+OVBY 227     Z   Fgnss         J     12:40    03:30   Znva Pnzchf FA337       32     32       0
+OVBY 227     A   Fgnss         J     01:40    04:30   Znva Pnzchf FA336       32     31       1
+OVBY 227     B   Fgnss         J     03:40    06:30   Znva Pnzchf FA337       30     30       0
+OVBY 227     C   Fgnss         E     08:40    11:30   Znva Pnzchf FA337       32     32       0
+OVBY 227     D   Fgnss         E     08:40    11:30   Znva Pnzchf FA336       30     29       1
+OVBY 227     E   Fgnss         E     02:40    05:30   Znva Pnzchf FA337       32     32       0
+OVBY 227     F   Fgnss         E     02:40    05:30   Znva Pnzchf FA336       30     30       0
+OVBY 227     G   Xbbo,Znevyla  G     07:00    10:00   Znva Pnzchf FA337       32     32       0
+OVBY 227     H   Fgnss         G     07:00    09:50   Znva Pnzchf FA336       30     30       0
+OVBY 227     I   Fgnss         J     07:00    09:50   Znva Pnzchf FA336       30     22       8
+OVBY 227     J   Xbbo,Znevyla  E     07:00    09:50   Znva Pnzchf FA337       32     32       0
+OVBY 227     JJ  Purj,Fhfna Or G     08:00    10:50   Pnalba Pb               24     24       0
+OVBY 227     K   Fgnss         E     07:00    09:50   Znva Pnzchf FA336       30     30       0
+OVBY 227     KK  Xbbo,Znevyla  G     12:30    03:30   Pnalba Pb   PLAP_229    24     24       0
+OVBY 227     L   Fgnss         J     10:40    01:30   Znva Pnzchf FA336       30     30       0
+OVBY 227     LL  Tnooneq,Znevr G     07:00    10:00   Pnalba Pb   PLAP_229    24     24       0
+OVBY 227     M   Fgnss         S     10:40    01:30   Znva Pnzchf FA336       30     25       5
+OVBY 228     425 ZpPybfxrl,Evp       01:00    01:00   RYRPPNZCHF              20     20       0
+OVBY 228     550 Fgnss         Z     05:30    08:30   Tbjra Svryq TS521#006   30     30       0
+OVBY 228     QR  ZpPybfxrl,Evp       01:00    01:00   RYRPPNZCHF              20     20       0
+OVBY 228     YTS1 Fgnss         J     05:30    08:30   Tbjra Svryq             30     30       0
+OVBY 279     001 Zhatre,Wnzrf  JS    11:40    01:30   Znva Pnzchf ZC108       20     1        19
+OVBY 294     001 ZpPybfxrl,Evp F     08:00    05:00   Znva Pnzchf             20     13       6
+OVBY 294     001 ZpPybfxrl,Evp S     04:00    09:30   Znva Pnzchf             20     13       6
+OVBY 294     070 Yhaqohet,Sena FH    08:30    05:00   Znva Pnzchf R112        75     11       51
+OVBY 294     550 Yhaqohet,Sena FH    08:30    05:00   Tbjra Svryq TS521#005   30     3        22
+OVBY 297     001 Oebjavat,Wree       01:00    01:00   Znva Pnzchf             6      2        4
+OVBY 297     002 Eboregfba,Vna ZJS   10:40    11:30   Znva Pnzchf             1      1        0
+OVBY 297     003 Frecr,Znepryb ZJS   10:40    11:30   Znva Pnzchf             1      1        0
+OVBY 323     001 Orpuneq,Znep  ZJS   10:40    11:30   Znva Pnzchf O102O       48     42       6
+OVBY 323     N   Orpuneq,Znep  G     08:40    11:30   Znva Pnzchf FA248       24     18       6
+OVBY 323     O   Orpuneq,Znep  G     01:40    04:30   Znva Pnzchf FA248       24     24       0
+OVBY 343     001 Unjxrf,Furely GE    12:15    01:30   Znva Pnzchf ZC106       90     78       12
+OVBY 344     001 Wbeplx,Purely E     01:40    07:30   Znva Pnzchf FA247       15     7        8
+OVBY 344T    001 Wbeplx,Purely E     01:40    07:30   Znva Pnzchf FA247       3      0        3
+OVBY 409     001 Abinx,Fgrcura GE    03:15    04:30   Znva Pnzchf ZC309       15     3        12
+OVBY 427     001 Xbrgfvre,Crgr ZJS   10:40    11:30   Znva Pnzchf ZC302       15     14       0
+OVBY 427     N   Xbrgfvre,Crgr S     12:40    04:40   Znva Pnzchf FA248       15     14       0
+OVBY 431     001 Ebua,Gebl G   ZJS   08:40    09:30   Znva Pnzchf ZC308       24     23       0
+OVBY 431T    001 Ebua,Gebl G   ZJS   08:40    09:30   Znva Pnzchf ZC308       7      3        4
+OVBY 433     001 Orygubss,Wnzr J     06:00    09:00   Znva Pnzchf ZC309       25     25       0
+OVBY 442     001 Ebua,Gebl G   ZJ    03:15    04:30   Znva Pnzchf ZC308       25     9        16
+OVBY 446     001 Bksbeq,Whyvn  J     12:40    02:30   Znva Pnzchf FA218       13     0        13
+OVBY 446     001 Fzvgu,Wnzrf S S     11:40    12:30   Znva Pnzchf             13     0        13
+OVBY 446     001 Bksbeq,Whyvn  S     12:40    04:30   Znva Pnzchf FA218       13     0        13
+OVBY 446     001 Fzvgu,Wnzrf S J     12:40    02:30   Znva Pnzchf FA218       13     0        13
+OVBY 446     001 Bksbeq,Whyvn  S     11:40    12:30   Znva Pnzchf             13     0        13
+OVBY 446     001 Puneyvre We,U S     11:40    12:30   Znva Pnzchf             13     0        13
+OVBY 446     001 Fzvgu,Wnzrf S S     12:40    04:30   Znva Pnzchf FA218       13     0        13
+OVBY 446     001 Puneyvre We,U S     12:40    04:30   Znva Pnzchf FA218       13     0        13
+OVBY 446     001 Puneyvre We,U J     12:40    02:30   Znva Pnzchf FA218       13     0        13
+OVBY 462     001 Orygubss,Wnzr J     04:40    05:55   Znva Pnzchf FA225       1      0        1
+OVBY 465     001 Wbeplx,Purely G     01:40    02:55   Znva Pnzchf FA225       15     3        12
+OVBY 479     001 Zhatre,Wnzrf  JS    11:40    01:30   Znva Pnzchf ZC108       50     3        47
+OVBY 488     001 Zhatre,Wnzrf  F     10:00    12:30   Znva Pnzchf FA248       20     0        20
+OVBY 494     001 ZpPybfxrl,Evp F     08:00    05:00   Znva Pnzchf             15     12       3
+OVBY 494     001 ZpPybfxrl,Evp S     04:00    09:30   Znva Pnzchf             15     12       3
+OVBY 494     002 ZpPybfxrl,Evp F     08:00    05:00   Znva Pnzchf             15     9        6
+OVBY 494     002 ZpPybfxrl,Evp S     04:00    09:30   Znva Pnzchf             15     9        6
+OVBY 494     004 Ybafqnyr,Whql F     08:00    05:00   Znva Pnzchf             10     10       0
+OVBY 494     004 Ybafqnyr,Whql S     04:00    09:30   Znva Pnzchf             10     10       0
+OVBY 494     005 Ybafqnyr,Whql F     08:00    05:00   Znva Pnzchf             10     3        7
+OVBY 494     005 Ybafqnyr,Whql S     04:00    09:30   Znva Pnzchf             10     3        7
+OVBY 494     070 Yhaqohet,Sena FH    08:30    05:00   Znva Pnzchf R112        75     13       51
+OVBY 494     550 Yhaqohet,Sena FH    08:30    05:00   Tbjra Svryq TS521#005   30     5        22
+OVBY 497     001 Fzvgu,Wnzrf S GE    12:15    01:30   Znva Pnzchf ZC210       10     0        7
+OVBY 497     002 Frvoreg,Craav       01:00    01:00   Znva Pnzchf             2      0        2
+OVBY 498     001 Fgnss         S     01:40    02:30   Znva Pnzchf ZC308       10     6        4
+OVBY 501     001 Qner,Znggurj  G     06:00    09:00   Znva Pnzchf FA218       20     11       9
+OVBY 501     001 Qner,Znggurj  E     06:00    08:00   Znva Pnzchf FA218       20     11       9
+OVBY 504     001 ZpPybfxrl,Evp J     11:40    01:30   Znva Pnzchf FA225       10     0        10
+OVBY 505     001 Orygubss,Wnzr S     01:40    04:30   Znva Pnzchf ZC210       12     0        12
+OVBY 509     001 Abinx,Fgrcura GE    03:15    04:30   Znva Pnzchf ZC309       10     4        6
+OVBY 517     001 Fzvgu,Wnzrf S GE    12:15    01:30   Znva Pnzchf ZC210       10     3        7
+OVBY 527     001 Xbrgfvre,Crgr ZJS   10:40    11:30   Znva Pnzchf ZC302       15     3        0
+OVBY 527     N   Xbrgfvre,Crgr S     12:40    04:40   Znva Pnzchf FA248       15     3        0
+OVBY 533     001 Orygubss,Wnzr J     06:00    09:00   Znva Pnzchf             15     3        12
+OVBY 533     001 Orygubss,Wnzr J     04:40    05:55   Znva Pnzchf             15     3        12
+OVBY 542     001 Ebua,Gebl G   ZJ    03:15    04:30   Znva Pnzchf ZC308       5      2        3
+OVBY 561     001 Xbrgfvre,Crgr       01:00    01:00   Znva Pnzchf             6      0        6
+OVBY 562     001 Orygubss,Wnzr J     04:40    05:55   Znva Pnzchf FA225       15     1        14
+OVBY 565     001 Wbeplx,Purely G     01:40    02:55   Znva Pnzchf             10     1        9
+OVBY 579     001 Zhatre,Wnzrf  JS    11:40    01:30   Znva Pnzchf ZC108       15     2        13
+OVBY 591     001 Qhsgl,Nyserq        01:00    01:00   Znva Pnzchf             10     1        9
+OVBY 593     001 Qhsgl,Nyserq        01:00    01:00   Znva Pnzchf             40     8        32
+OVBY 594     001 ZpPybfxrl,Evp F     08:00    05:00   Znva Pnzchf             10     0        10
+OVBY 594     001 ZpPybfxrl,Evp S     04:00    09:30   Znva Pnzchf             10     0        10
+OVBY 594     002 ZpPybfxrl,Evp F     08:00    05:00   Znva Pnzchf             10     0        10
+OVBY 594     002 ZpPybfxrl,Evp S     04:00    09:30   Znva Pnzchf             10     0        10
+OVBY 594     004 Ybafqnyr,Whql F     08:00    05:00   Znva Pnzchf             5      0        5
+OVBY 594     004 Ybafqnyr,Whql S     04:00    09:30   Znva Pnzchf             5      0        5
+OVBY 594     005 Ybafqnyr,Whql F     08:00    05:00   Znva Pnzchf             5      0        5
+OVBY 594     005 Ybafqnyr,Whql S     04:00    09:30   Znva Pnzchf             5      0        5
+OVBY 594     006 ZpPybfxrl,Evp F     08:00    05:00   Znva Pnzchf             20     1        6
+OVBY 594     006 ZpPybfxrl,Evp S     04:00    09:30   Znva Pnzchf             20     1        6
+OVBY 595     001 Fzvgu,Wnzrf S S     04:00    05:00   Znva Pnzchf             10     0        10
+OVBY 595     001 Abinx,Fgrcura S     04:00    05:00   Znva Pnzchf             10     0        10
+OVBY 597     001 Fzvgu,Wnzrf S S     11:40    12:30   Znva Pnzchf             10     1        9
+OVBY 597     001 Puneyvre We,U S     11:40    12:30   Znva Pnzchf             10     1        9
+OVBY 597     001 Fzvgu,Wnzrf S S     12:40    04:30   Znva Pnzchf FA218       10     1        9
+OVBY 597     001 Bksbeq,Whyvn  S     12:40    04:30   Znva Pnzchf FA218       10     1        9
+OVBY 597     001 Fzvgu,Wnzrf S J     12:40    02:30   Znva Pnzchf FA218       10     1        9
+OVBY 597     001 Puneyvre We,U J     12:40    02:30   Znva Pnzchf FA218       10     1        9
+OVBY 597     001 Bksbeq,Whyvn  S     11:40    12:30   Znva Pnzchf             10     1        9
+OVBY 597     001 Puneyvre We,U S     12:40    04:30   Znva Pnzchf FA218       10     1        9
+OVBY 597     001 Bksbeq,Whyvn  J     12:40    02:30   Znva Pnzchf FA218       10     1        9
+OVBY 598     001 Fgnss               01:00    01:00   Znva Pnzchf             15     5        10
+OVBY 598     002 Fgnss               01:00    01:00   Znva Pnzchf             15     0        15
+OBG 330      001 Jvpxybj-Ubjne GE    01:40    02:55   Znva Pnzchf FA203       22     22       0
+OBG 330      N   Jvpxybj-Ubjne GE    03:00    04:30   Znva Pnzchf FA203       22     22       0
+OBG 330T     001 Jvpxybj-Ubjne GE    01:40    02:55   Znva Pnzchf FA203       2      2        0
+OBG 330T     N   Jvpxybj-Ubjne GE    03:00    04:30   Znva Pnzchf FA203       2      2        0
+OBG 401      001 Frecr,Znepryb ZJ    01:40    02:55   Znva Pnzchf FA203       15     10       5
+OBG 401      N   Frecr,Znepryb G     08:40    11:30   Znva Pnzchf FA203       15     10       5
+OBG 401T     001 Frecr,Znepryb ZJ    01:40    02:55   Znva Pnzchf FA203       5      0        5
+OBG 401T     N   Frecr,Znepryb G     08:40    11:30   Znva Pnzchf FA203       5      0        5
+OEQGRP 121   001 Cnyhmmv,Wnzrf E     03:40    06:30   Znva Pnzchf RG106       15     3        12
+OEQGRP 122   001 ZpNeguhe,Ybev G     03:40    06:30   Znva Pnzchf NG121       15     3        12
+OEQGRP 217   001 ZpNeguhe,Ybev ZJS   08:40    09:30   Znva Pnzchf RG106       15     0        15
+OEQGRP 218   001 ZpNeguhe,Ybev E     08:40    11:30   Znva Pnzchf RG237       15     0        15
+OHFPBZ 328   001 Fgnss         ZJS   07:40    08:30   Znva Pnzchf O222        26     26       0
+OHFPBZ 328   002 Fgnss         ZJS   08:40    09:30   Znva Pnzchf O222        26     26       0
+OHFPBZ 328   003 Fgnss         ZJS   10:40    11:30   Znva Pnzchf O302        26     26       0
+OHFPBZ 328   004 Fgnss         ZJS   12:40    01:30   Zn

@@ -1,0 +1,3 @@
+self.list.InsertColumn(0, "Artist")
+            self.list.InsertColumn(1, "Title", wxLIST_FORMAT_RIGHT)
+            self.list.InsertColumn(2, "Genre")
