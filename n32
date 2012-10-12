@@ -1,0 +1,47 @@
+#!/usr/bin/python
+
+# Convert a number on command line to various permutations of 32-bit integer
+# (signed, unsigned, hex, etc)
+#
+# davep 2011? 2010?
+
+import sys
+import ctypes
+
+def mkint( string ) :
+    """Try converting a string to base-10 integer. If that fails, try base-16.
+    If that fails, we'll allow the ValueError to propogate."""
+
+    value = None
+    try :
+        value = int(string,10)
+        return value
+    except ValueError:
+        pass
+
+    try : 
+        # ok, maybe it's hex
+        value = int(string,16)
+        return value
+    except ValueError : 
+        pass
+
+    # float!?!?!?!?
+    value = float(string)
+
+    return value
+
+for arg in sys.argv[1:] :
+    n = mkint(arg)
+
+    # make sure it's 100% integer
+    n = int(n)
+
+    uint32 = ctypes.c_uint32( n )
+    int32 = ctypes.c_int32( n )
+
+    print n,
+    print uint32,
+    print int32,
+    print "%#x" % uint32.value
+
