@@ -5,7 +5,7 @@
 
 import sys
 import os
-import Image
+import PIL.Image as Image
 import numpy as np
 
 def floatstr( floatnum ) : 
@@ -45,7 +45,7 @@ def save_image_old( npdata, outfilename ) :
     # create monochome ("L") image
     img = Image.fromarray( np.asarray( np.clip(npdata,0,255), dtype="uint8"), "L" )
     img.save( outfilename )
-    print "wrote {0}".format( outfilename )
+    print( "wrote {0}".format( outfilename ))
 
 def save_image( npdata, outfilename ) : 
     # normalize input range down to [0,255], convert to uint8
@@ -60,7 +60,7 @@ def save_image( npdata, outfilename ) :
 
     img = Image.fromarray( np.uint8( normalized ))
     img.save( outfilename )
-    print "wrote {0}".format( outfilename )
+    print( "wrote {0}".format( outfilename ) )
 
 def clip_and_save( data, outfilename ) : 
     data_uint8 = np.asarray( np.clip( data, 0, 255 ), dtype="uint8" )
@@ -76,7 +76,7 @@ def clip_and_save( data, outfilename ) :
                 "Unknown array shape {0} so cannot make image".format(shapelen) )
 
     outimg.save( outfilename )
-    print "wrote {0}".format( outfilename )
+    print( "wrote {0}".format( outfilename ) )
 
 def get_basename( filename ) : 
     return os.path.splitext( os.path.split( filename )[1] )[0]
