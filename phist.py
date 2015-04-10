@@ -16,13 +16,21 @@ def get_win_size():
     win_size = struct.unpack('hh', fcntl.ioctl(0, termios.TIOCGWINSZ,'1234'))
     return win_size
 
-def printf_histogram(infilename):
+def printf_histogram(infilename,channel_num=None):
     img = Image.open( infilename )
     img.load()
     ndata = np.asarray( img, dtype="int" )
 
     # TODO handle 16-bpp images
-    histo = np.histogram(ndata,range=(0,255),bins=256)[0]
+    hist_range = (0,255)
+    num_bins = 256
+
+    if channel_num and len(ndata.shape)==3:
+        # color image has 3 dimensions
+        # grayscale image doesn't have channels so ignore channel number
+        histo = np.histogram(ndata[:,:,channel_num].flatten(),range=hist_range,bins=num_bins)[0]
+    else:
+        histo = np.histogram(ndata.flatten(),range=hist_range,bins=num_bins)[0]
 
     # normalize data to window width and leave space for the pixel indices
     win_width = get_win_size()[1]
@@ -33,5 +41,9 @@ def printf_histogram(infilename):
 
 if __name__=='__main__':
     infilename = sys.argv[1]
-    printf_histogram(infilename)
+    if len(sys.argv) > 2 : 
+        channel_num = int(sys.argv[2])
+        printf_histogram(infilename,channel_num)
+    else:
+        printf_histogram(infilename)
 
