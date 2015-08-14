@@ -11,7 +11,7 @@ import random
 spade=0
 diamond=1
 club=2
-hearts=3
+heart=3
 suits_names = ( "S","D","C","H" )
 
 ace=0
@@ -35,7 +35,7 @@ BUSTED = -1
 # rather than here
 blackjack_values = ( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 )
 
-suits = ( spade, diamond, club, hearts )
+suits = ( spade, diamond, club, heart )
 values = ( ace, two, three, four, five, six, seven, eight, nine, ten, jack,
             queen, king, )
 
@@ -46,6 +46,8 @@ PLAYER_BLACKJACK=-2
 
 class Card(object):
     def __init__(self,suit,value):
+        assert suit in suits, suit
+        assert value in values, value
         self.suit = suit
         self.value = value
 
@@ -156,10 +158,11 @@ class BlackjackHand(Hand):
         root.summation(nonace_sum,root,self.hand_sums )
 
         # did we bust?
-        safe_hands = [ n for n in self.hand_sums if n < 21 ] 
+        safe_hands = [ n for n in self.hand_sums if n <= 21 ] 
         if len(safe_hands)==0 :
             raise BlackjackBusted(self)
 
+        self.hand_sums = safe_hands
         return self.hand_sums 
 
     def is_blackjack(self):
@@ -176,14 +179,14 @@ def calc_blackjack_results(hands_list):
     result_list = []
     winner_idx = 0
     for hand in hands_list : 
-        hand_result = hand.summation()
-        non_bust = [ n for n in hand_result if n <= 21 ]
-        if len(non_bust)==0 :
+        try : 
+            hand_result = hand.summation()
+        except BlackjackBusted : 
             result_list.append(BUSTED)
         else:
-            result_list.append(max(non_bust))
-        if result_list[winner_idx] < result_list[-1] : 
-            winner_idx = len(result_list)-1
+            result_list.append(max(hand_result))
+            if result_list[winner_idx] < result_list[-1] : 
+                winner_idx = len(result_list)-1
 
     return winner_idx, result_list
 
@@ -217,6 +220,25 @@ def test():
     except BlackjackBusted :
         print("Busted! hand={0} sum={1}".format(hand,hand.hand_sums))
         pass
+
+    # found something weird while testing
+    dealer_hand = BlackjackHand()
+    dealer_hand.add(BlackjackCard(heart,seven))
+    dealer_hand.add(BlackjackCard(spade,four))
+    dealer_hand.add(BlackjackCard(heart,ace))
+    player_hand = BlackjackHand()
+    player_hand.add(BlackjackCard(heart,four))
+    player_hand.add(BlackjackCard(diamond,seven))
+    player_hand.add(BlackjackCard(diamond,four))
+    dealer_sums = dealer_hand.summation()
+    player_sums = player_hand.summation()
+    print("dealer={0} player={1}".format(dealer_hand,player_hand))
+    print("sums dealer={0} player={1}".format(dealer_sums,player_sums))
+    assert not dealer_hand.is_blackjack()
+    assert not player_hand.is_blackjack()
+
+    winner_idx, result_list = calc_blackjack_results((dealer_hand,player_hand))
+    print("winner={0} result={1}".format(winner_idx,result_list))
 
 def play_hand():
     deck = BlackjackDeck()
@@ -295,7 +317,6 @@ def play_hand():
     return PLAYER_WIN
 
 def main():
-#    test()
 
     player_money = 100
     while player_money > 0 : 
@@ -329,4 +350,5 @@ def main():
 
 if __name__=='__main__':
     main()
+#    test()
 
