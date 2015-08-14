@@ -5,29 +5,43 @@ import sys
 if sys.version_info.major < 3:
     raise Exception("Requires Python 3.x")
 
+from ttt_types import *
+
 class Board(object):
     def __init__(self):
         self.board = [' '] * 9
         self.winner = None
 
-    def _print(self,fields):
-        s = "|".join(fields[0:3])
-        print(s)
-        print("- - -")
-        s = "|".join(fields[3:6])
-        print(s)
-        print("- - -")
-        s = "|".join(fields[6:])
-        print(s)
+#    def _print(self,fields):
+#        s = "|".join(fields[0:3])
+#        print(s)
+#        print("- - -")
+#        s = "|".join(fields[3:6])
+#        print(s)
+#        print("- - -")
+#        s = "|".join(fields[6:])
+#        print(s)
+
+    def __print(self,fields):
+        s = "|".join(fields[0:3]) \
+            + "\n- - -\n" \
+            + "|".join(fields[3:6])\
+            + "\n- - -\n" \
+            + "|".join(fields[6:])
+        return s
+
+#    def print(self,postfix=""):
+#        self._print(self.board)
+#        if postfix:
+#            print(postfix)
 
     def print(self,postfix=""):
-        self._print(self.board)
+        print(self)
         if postfix:
             print(postfix)
 
     def help(self):
-        self._print( [str(n) for n in range(1,10)] )
-        print("\n")
+        print(self.__print( [str(n) for n in range(1,10)] ))
 
     def move(self,player,location):
         idx = location - 1
@@ -68,7 +82,7 @@ class Board(object):
             return
 
     def open_moves(self):
-        # return list of available moves
+        """return list of available moves"""
         return [ n+1 for n in range(9) if self.board[n]==' ']
 
 

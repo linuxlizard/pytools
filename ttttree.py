@@ -38,6 +38,9 @@ def next_board(curr_node,board,char):
 #    print("depth={0} char={1} board={2}".format(depth,char,str(curr_node)))
 #    print(curr_node)
 
+    if depth > 3 : 
+        # win/loss now possible so start checking
+
 #    if depth > 4 : 
 #        depth -= 1
 ##        print("(skip)")

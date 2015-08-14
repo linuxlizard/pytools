@@ -8,82 +8,9 @@ if sys.version_info.major < 3:
     raise Exception("Requires Python 3.x")
 import random
 
-x_win = "XXX"
-o_win = "OOO"
-
-PLAYER_WIN=1
-COMPUTER_WIN=2
-QUIT_GAME = 3
-NO_WINNER = 4
-
-class InvalidMove(Exception):
-    pass
-
-class Board(object):
-    def __init__(self):
-        self.board = [' '] * 9
-        self.winner = None
-
-    def _print(self,fields):
-        s = "|".join(fields[0:3])
-        print(s)
-        print("- - -")
-        s = "|".join(fields[3:6])
-        print(s)
-        print("- - -")
-        s = "|".join(fields[6:])
-        print(s)
-
-    def print(self,postfix=""):
-        self._print(self.board)
-        if postfix:
-            print(postfix)
-
-    def help(self):
-        self._print( [str(n) for n in range(1,10)] )
-        print("\n")
-
-    def move(self,player,location):
-        idx = location - 1
-        if idx < 0 or idx >= 9 :
-            raise InvalidMove
-        if self.board[idx] != ' ' :
-            raise InvalidMove
-
-        self.board[location-1] = player
-
-    def score(self):
-        self.winner = None
-
-        # horizontal
-        for row in range(0,10,3):
-            s = "".join(self.board[row:row+3])
-            if s==x_win or s==o_win : 
-                self.winner = s[0]
-                return
-
-        # vertical
-        for col in range(3):
-            s = "".join( (self.board[col],self.board[col+3],self.board[col+3+3]) )
-            if s==x_win or s==o_win : 
-                self.winner = s[0]
-                return
-
-        # diagonal upper left to lower right
-        s = "".join((self.board[0],self.board[4],self.board[8]))
-        if s==x_win or s==o_win : 
-            self.winner = s[0]
-            return
-
-        # diagonal upper right to lower left
-        s = "".join((self.board[2],self.board[4],self.board[6]))
-        if s==x_win or s==o_win : 
-            self.winner = s[0]
-            return
-
-    def open_moves(self):
-        # return list of available moves
-        return [ n+1 for n in range(9) if self.board[n]==' ']
+from ttt_types import *
+#from ttt_board import Board
+from ttt2 import Board
 
 class ComputerPlayer(object):
     def __init__(self,board,the_char):
@@ -93,10 +20,106 @@ class ComputerPlayer(object):
         assert the_char in ("X","O"),the_char
         self.char = the_char
 
-    def get_move(self):
+        if self.char=="X":
+            self.opponent = "O"
+        else:
+            self.opponent = "X"
+
+    def get_move_random(self):
         # for now, just move randomly
         open_moves = self.board.open_moves()
         return random.choice(open_moves)
+
+    def _find_hole(self,char,the_list,hole_to_move):
+        if the_list.count(char)==2 : 
+            # someone has two spots in this array
+            # is there a hole?
+            try:
+                empty_pos = the_list.index(' ')
+            except ValueError:
+                # nope, no hole
+                return None
+            else:
+                # convert the hole position to a move number
+                move = hole_to_move(empty_pos)
+                print("hole at {0}".format(move))
+                return move
+        return None
+
+    def _find_horizontal_hole(self,char1):
+        # Find a hole in a horiontal direction.
+        # Used to find a blocking move or a winning move.
+        board = self.board.board
+        for row_idx in range(0,10,3):
+            row = board[row_idx:row_idx+3] 
+            move = self._find_hole(char1,row,lambda empty_pos:row_idx+empty_pos+1)
+            if move :
+                return move
+        return None
+
+    def _find_vertical_hole(self,char1):
+        # Find a hole in a vertical direction.
+        # Used to find a blocking move or winning move.
+        board = self.board.board
+        for col_idx in range(3):
+            col = board[col_idx],board[col_idx+3],board[col_idx+3+3] 
+            move = self._find_hole(char1,col,lambda empty_pos:col_idx+empty_pos*3+1)
+            if move :
+                return move
+        return None
+
+    diagonal_LR_hole_fill = ( 1, 5, 9 )
+    diagonal_RL_hole_fill = ( 3, 5, 7 )
+
+    def get_move(self):
+        # can I win? do I need to block?
+        #
+        # horizontal win?
+        move = self._find_horizontal_hole(self.char)
+        if move is not None :
+            return move
+
+        # vertical win?
+        move = self._find_vertical_hole(self.char)
+        if move is not None :
+            return move
+
+        # horizontal block?
+        move = self._find_horizontal_hole(self.opponent)
+        if move is not None :
+            return move
+
+        # vertical block?
+        move = self._find_vertical_hole(self.opponent)
+        if move is not None :
+            return move
+
+        # diagonals
+        board = self.board.board
+        diag_LR = "".join((board[0],board[4],board[8]))
+        diag_RL = "".join((board[2],board[4],board[6]))
+
+        # diagonal upper left to lower right - win?
+        move = self._find_hole(self.char,diag_LR,lambda empty_pos:self.diagonal_LR_hole_fill[empty_pos])
+        if move :
+            return move
+
+        # diagonal upper right to lower left - win?
+        move = self._find_hole(self.char,diag_RL,lambda empty_pos:self.diagonal_RL_hole_fill[empty_pos])
+        if move :
+            return move
+
+        # diagonal upper left to lower right - block?
+        move = self._find_hole(self.opponent,diag_LR,lambda empty_pos:self.diagonal_LR_hole_fill[empty_pos])
+        if move :
+            return move
+
+        # diagonal upper right to lower left - block?
+        move = self._find_hole(self.opponent,diag_RL,lambda empty_pos:self.diagonal_RL_hole_fill[empty_pos])
+        if move :
+            return move
+
+        return self.get_move_random()
 
 def test():
     board = Board()
@@ -123,7 +146,7 @@ def play_game():
         computer= ComputerPlayer(board,"O")
     else:
         computer= ComputerPlayer(board,"X")
-    print("player is {0}".format(player))
+    print("Player is {0}".format(player))
     
     print("X always moves first.")
     

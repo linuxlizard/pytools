@@ -8,13 +8,15 @@ if sys.version_info.major < 3:
     raise Exception("Requires Python 3.x")
 import random
 
-class InvalidMove(Exception):
-    pass
+from ttt_types import *
+import ttt_board 
 
-class Board(object):
+class Board(ttt_board.Board):
+    # Board using integers for position record rather than strings. Should be
+    # faster. 
+    
     def __init__(self):
-        self.board = [' '] * 9
-        self.winner = None
+        super().__init__()
         self.X = 0
         self.O = 0
 
@@ -25,14 +27,6 @@ class Board(object):
             return "O"
         return " "
 
-    def __print(self,fields):
-        s = "|".join(fields[0:3]) \
-            + "\n- - -\n" \
-            + "|".join(fields[3:6])\
-            + "\n- - -\n" \
-            + "|".join(fields[6:])
-        return s
-
     def draw_board(self):
         for pos in range(9):
             self.board[pos] = self.__XO(1<<pos)
@@ -41,10 +35,10 @@ class Board(object):
         self.draw_board()
         return self.__print(self.board)
 
-    def print(self,postfix=""):
-        print(self)
-        if postfix:
-            print(postfix)
+    def open_moves(self):
+        """return list of available moves"""
+        self.draw_board()
+        return super().open_moves()
 
     def move(self,player,location):
         bit = location - 1
@@ -52,50 +46,83 @@ class Board(object):
             raise InvalidMove
 
         m = (1<<bit)
+
+        # spot already taken?
+        if self.X & m :
+            raise InvalidMove
+        if self.O & m :
+            raise InvalidMove
+
         if player=="X":
-            if self.X & m :
-                raise InvalidMove
             self.X = self.X | m
 
         if player=="O":
-            if self.O & m :
-                raise InvalidMove
             self.O = self.O | m
 
     def score(self):
         self.winner = None
 
         # note: octal!
-        horiz = 0o07
-        vert = 0o111
+        # Lsb is upper left (position #1) so masks are kinda backwards from
+        # intuition
+        horiz = 0o07  
+        vert = 0o111 
         diag_left = 0o124
         diag_right = 0o421
         
+        # stupid human check
         assert self.X & self.O == 0, (oct(self.X),oct(self.O))
 
-        if self.O & diag_left == diag_left : 
+        print( oct(self.O^diag_left),oct(self.O^diag_right))
+        print( oct(self.X^diag_left),oct(self.X^diag_right))
+
+        if self.O and self.O ^ diag_left == 0 : 
             self.winner = "O"
             return
-        if self.X & diag_left == diag_left : 
+        if self.X and self.X ^ diag_left == 0 : 
             self.winner = "X"
             return
-        if self.O & diag_right == diag_right : 
+        if self.O and self.O ^ diag_right == 0 : 
             self.winner = "O"
             return
-        if self.X & diag_right == diag_right : 
+        if self.X and self.X ^ diag_right == 0 : 
             self.winner = "X"
             return
 
+#        if self.O & diag_left == diag_left : 
+#            self.winner = "O"
+#            return
+#        if self.X & diag_left == diag_left : 
+#            self.winner = "X"
+#            return
+#        if self.O & diag_right == diag_right : 
+#            self.winner = "O"
+#            return
+#        if self.X & diag_right == diag_right : 
+#            self.winner = "X"
+#            return
+
         for n in range(3):
-            if self.X & horiz == horiz or \
-               self.X & vert==vert :
+            print( oct(horiz), oct(vert) )
+            print( oct(self.O), oct(self.O^horiz), oct(self.O^vert))
+            print( oct(self.X), oct(self.X^horiz), oct(self.X^vert))
+            if (self.X ^ horiz == 0 or self.X ^ vert==0) :
                 self.winner = "X"
                 return 
 
-            if (self.O & horiz == horiz) or \
-               (self.O & vert==vert):
+            if ( self.O^horiz==0 or self.O ^ vert==0 ):
                 self.winner = "O"
                 return 
+
+#            if self.X & horiz == horiz or \
+#               self.X & vert==vert :
+#                self.winner = "X"
+#                return 
+#
+#            if (self.O & horiz == horiz) or \
+#               (self.O & vert==vert):
+#                self.winner = "O"
+#                return 
 
             horiz = horiz << 3
             vert  = vert << 1
@@ -109,6 +136,26 @@ def test():
     board.print("\n")
     board.X += 1
     board.print("\n")
+
+    p = 0o007
+    for i in range(3) :
+        board = Board()
+        board.X = p
+        board.print("\n")
+        board.score()
+        assert board.winner=="X", (i,oct(board.X))
+        p <<= 3
+
+    p = 0o111
+    for i in range(3) :
+        board = Board()
+        board.X = p
+        board.print("\n")
+        board.score()
+        assert board.winner=="X"
+        p <<= 1
+
+    return
 
     board.X = random.randint(0,2**9-1)
     board.O = random.randint(0,2**9-1)
@@ -164,6 +211,8 @@ def test():
             print("O wins!")
             break
         print("no winner")
+
+    board.help()
     
 if __name__=='__main__':
     test()
