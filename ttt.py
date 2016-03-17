@@ -42,7 +42,7 @@ class ComputerPlayer(object):
             else:
                 # convert the hole position to a move number
                 move = hole_to_move(empty_pos)
-                print("hole at {0}".format(move))
+#                print("hole at {0}".format(move))
                 return move
         return None
 
