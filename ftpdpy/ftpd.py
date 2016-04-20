@@ -581,7 +581,8 @@ class NetFTPd :
         if not arg :
             raise error_command( "STOR", "501 Missing filename argument for STOR command." )
 
-        abspath = self.ftppath_to_abspath( arg )
+        ftppath = arg
+        abspath = self.ftppath_to_abspath( ftppath )
         (path,filespec) = split_file_path( abspath )
 
         # If the target exists, make sure it's a file.  If the target doesn't
@@ -632,6 +633,112 @@ class NetFTPd :
         self.data_sock = None
 
         self.putline( "226 Closing data connection." )
+
+    def _dir_exists(self, abspath):
+        # verify abspath exists and is a directory
+        # raises exceptions if exists and is NOT a directory
+
+        if not os.path.exists(abspath):
+            return False
+
+        try:
+            statinfo = os.stat(abspath)
+        except OSError,err :
+            self.logit( "! Could not stat \"%s\" :" % abspath, err )
+            raise error_path("failed to stat \"%s\"", ftppath)
+
+        # if it exists and is not a directory, raise an error
+        if not stat.S_ISDIR(statinfo[stat.ST_MODE]) :
+            self.logit("!\"%s\" already exists and is not a directory", abspath)
+            raise error_path("\"%s\" already exists and is not a directory", ftppath)
+
+        return True
+
+    def command_mkdir(self, arg):
+        # davep 20-Apr-2016 ; adding mkdir
+        # holy crap 13 years since I updated this code 
+        if not arg :
+            raise error_command( "MKD", "501 Missing argument for MKD command." )
+
+        ftppath = arg
+        abspath = self.ftppath_to_abspath(ftppath)
+
+        # will raise exception if abspath exists but isn't a directory
+        if self._dir_exists(abspath):
+            self.putline( "212 \"%s\" already exists" % ftppath)
+            return
+
+        if self.debugging : self.logit( "# create dir \"%s\"" % abspath)
+
+        try:
+            os.mkdir(abspath)
+        except OSError, err:
+            self.logit( "! failed to mkdir \"%s\" :" % abspath, err )
+            raise error_command("MKD", "504 failed to create dir")
+
+        self.putline( "212 Successfully created %s." % ftppath)
+
+    def command_rmdir(self, arg):
+        # davep 20-Apr-2016 ; adding rmdir 
+        if not arg :
+            raise error_command( "MKD", "501 Missing argument for RMD command." )
+
+        ftppath = arg
+        abspath = self.ftppath_to_abspath(ftppath)
+
+        # will raise exception if abspath exists but isn't a directory
+        if not self._dir_exists(abspath):
+            self.putline( "212 \"%s\" does not exist" % ftppath)
+            return
+
+        if self.debugging : self.logit( "# remove dir \"%s\"" % abspath)
+
+        try:
+            os.rmdir(abspath)
+        except OSError, err:
+            self.logit( "! failed to rmdir \"%s\" :" % abspath, err )
+            raise error_command("RMD", "504 failed to remove dir")
+
+        self.putline( "212 Successfully removed %s." % ftppath)
+
+    def command_dele(self, arg):
+        # davep 20-Apr-2016 ; adding dele (unlink file) 
+        if not arg :
+            raise error_command( "DELE", "501 Missing argument for DELE command." )
+
+        ftppath = arg
+        abspath = self.ftppath_to_abspath(ftppath)
+
+        if not os.path.exists(abspath):
+            self.putline( "213 \"%s\" does not exist" % ftppath)
+            return
+
+        try :
+            statinfo = os.stat(abspath)
+        except OSError,err :
+            self.logit( "! Could not stat \"%s\" :" % abspath, err )
+            raise error_path( abspath, "501 Bad path." )
+        if not stat.S_ISREG(statinfo[stat.ST_MODE]) :
+            raise error_path( abspath, "550 \"%s\" is not a regular file." % ftppath )
+
+        if self.debugging : self.logit( "# unlink file \"%s\"" % abspath)
+
+        try:
+            os.unlink(abspath)
+        except OSError, err:
+            self.logit("!could not unlink \"%s\" :" % abspath, err)
+            raise error_path( abspath, "550 \"%s\" failed to unlink" % ftppath)
+
+        self.putline("213 \"%s\" removed" % ftppath)
+
+    def command_cdup(self, arg):
+        # davep 20-Apr-2016 ;  adding CDUP
+        self.chdir("..")
+        self.putline( '257 "%s" is the current directory.' % self.ftppath )
+
+    def command_quit(self, arg):
+        # davep 20-Apr-2016 ;  
+        self.putline('200 bye!')
 
     def file_stat( self, ftppath, abspath ) :
         try :
@@ -687,6 +794,11 @@ class NetFTPd :
                           "NLST" : command_nlst,
                           "RETR" : command_retr,
                           "STOR" : command_stor,
+                          "MKD"  : command_mkdir,
+                          "RMD"  : command_rmdir,
+                          "DELE" : command_dele,
+                          "CDUP" : command_cdup,
+                          "QUIT" : command_quit,
 
                           # rfc2389
                           "FEAT" : command_feat,
@@ -696,7 +808,7 @@ class NetFTPd :
                           "MDTM" : command_mdtm,
                         }
     commands = command_functions.keys()
-    [commands.append( x ) for x in [ "USER", "PASS", "QUIT" ] ]
+    [commands.append( x ) for x in [ "USER", "PASS" ] ]
 
     def serveit( self ) :
         """The Main Event."""
@@ -719,8 +831,6 @@ class NetFTPd :
             except error_command,err :
                 self.error500( err.cmd ) 
             else :
-                if cmd == "QUIT" :
-                    break
                 try :
                     self.command_functions[cmd](self,data)
                 except KeyError :
@@ -730,6 +840,9 @@ class NetFTPd :
                     # don't like; send back the error message and wait for
                     # another command
                     self.putline( err.errmsg )
+
+                if cmd == "QUIT" :
+                    break
 
     # For BaseRequestHandler()
     def setup(self) :
@@ -822,6 +935,7 @@ if __name__ == '__main__' :
     thd = None
 
     while 1 :
+        print "ftpd running on port %d" % FTP_PORT
         (request,(client_address,client_port)) = s.accept()
         if thd :
             thd.Stop()
