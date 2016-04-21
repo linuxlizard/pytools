@@ -136,7 +136,7 @@ class UnixToDosFile( ConvertFile ) :
         # block - 'buffer' parameter; data used in each invocation of convert()
         # chunk - resulting array of strings from a block split by LF
 
-        print "UnixToDosFile.convert()"
+        print("UnixToDosFile.convert()")
 
         newbuffer = ""
         chunks = buffer.split( LF )
