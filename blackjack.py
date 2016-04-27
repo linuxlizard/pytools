@@ -288,6 +288,7 @@ def play_hand():
         return DEALER_WIN
 
     # dealer has to hit on 16 stand on 17
+    print("dealer shows {0}".format(dealer_hand))
     dealer_hand_value = dealer_hand.summation()
     while max(dealer_hand_value) < 17 : 
         print("dealer takes card")
@@ -298,8 +299,8 @@ def play_hand():
             print("dealer={0} player={1}".format(dealer_hand,player_hand))
             print( "Dealer busted! You win!" )
             return PLAYER_WIN
-        dealer_cards = " ".join( [str(c) for c in dealer_hand.hand[1:]] )
-        print("dealer shows {0} player={1}".format(dealer_cards,player_hand))
+#        dealer_cards = " ".join( [str(c) for c in dealer_hand.hand[1:]] )
+        print("dealer shows {0} player={1}".format(dealer_hand,player_hand))
 
     winner_idx, card_sums = calc_blackjack_results((dealer_hand,player_hand))
 
