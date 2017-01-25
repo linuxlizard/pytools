@@ -182,7 +182,7 @@ class NetFTPd :
         line = line + CRLF
         if self.debugging > 1: 
             logger.info( '*put* %s', self.sanitize(line) )
-        self.senddata(self.request,line)
+        self.senddata(self.request,line.encode("utf8"))
 
     # Internal: return one line from the server, stripping CRLF.
     # Raise EOFError if the connection is closed
@@ -242,7 +242,8 @@ class NetFTPd :
             if not writable_sockets :
                 continue
 
-            n = sock.send(data.encode("UTF-8"))
+            # require caller to have encoded the buffer 
+            n = sock.send(data)
             data = data[n:]
             datalen -= n
 
@@ -888,7 +889,7 @@ class FTPThread :
         try :
             self.ftpd.handle()
         except :
-            logger.exception('Exception happened during processing of request from',self.client_address)
+            logger.exception('Exception happened during processing of request from %s',self.client_address)
         finally:
             self.ftpd.finish()
             del self.ftpd
