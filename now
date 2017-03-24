@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+
+# davep 20170324 Get current date and time in ISO8601
+
+import time
+print( time.strftime("%Y%m%dT%H%M%SZ", time.gmtime()))
