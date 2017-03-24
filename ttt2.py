@@ -73,56 +73,33 @@ class Board(ttt_board.Board):
         # stupid human check
         assert self.X & self.O == 0, (oct(self.X),oct(self.O))
 
-        print( oct(self.O^diag_left),oct(self.O^diag_right))
-        print( oct(self.X^diag_left),oct(self.X^diag_right))
+#        print(oct(self.O))
+#        print(oct(self.X))
 
-        if self.O and self.O ^ diag_left == 0 : 
+        if self.O & diag_left == diag_left : 
             self.winner = "O"
             return
-        if self.X and self.X ^ diag_left == 0 : 
+        if self.X & diag_left == diag_left : 
             self.winner = "X"
             return
-        if self.O and self.O ^ diag_right == 0 : 
+        if self.O & diag_right == diag_right : 
             self.winner = "O"
             return
-        if self.X and self.X ^ diag_right == 0 : 
+        if self.X & diag_right == diag_right : 
             self.winner = "X"
             return
-
-#        if self.O & diag_left == diag_left : 
-#            self.winner = "O"
-#            return
-#        if self.X & diag_left == diag_left : 
-#            self.winner = "X"
-#            return
-#        if self.O & diag_right == diag_right : 
-#            self.winner = "O"
-#            return
-#        if self.X & diag_right == diag_right : 
-#            self.winner = "X"
-#            return
 
         for n in range(3):
-            print( oct(horiz), oct(vert) )
-            print( oct(self.O), oct(self.O^horiz), oct(self.O^vert))
-            print( oct(self.X), oct(self.X^horiz), oct(self.X^vert))
-            if (self.X ^ horiz == 0 or self.X ^ vert==0) :
+#            print( oct(horiz), oct(vert) )
+#            print( oct(self.O), oct(self.O&horiz), oct(self.O&vert))
+#            print( oct(self.X), oct(self.X&horiz), oct(self.X&vert))
+            if self.X&horiz==horiz  or self.X&vert==vert :
                 self.winner = "X"
                 return 
 
-            if ( self.O^horiz==0 or self.O ^ vert==0 ):
+            if self.O&horiz==horiz or self.O&vert==vert :
                 self.winner = "O"
                 return 
-
-#            if self.X & horiz == horiz or \
-#               self.X & vert==vert :
-#                self.winner = "X"
-#                return 
-#
-#            if (self.O & horiz == horiz) or \
-#               (self.O & vert==vert):
-#                self.winner = "O"
-#                return 
 
             horiz = horiz << 3
             vert  = vert << 1
