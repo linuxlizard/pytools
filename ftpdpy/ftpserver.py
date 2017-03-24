@@ -2,7 +2,7 @@
 
 import sys
 import time
-import thread
+import _thread
 import wx
 import wx.lib.mixins.listctrl
 import socket
@@ -10,6 +10,7 @@ import select
 import os
 
 import ftpd
+from functools import reduce
 
 VERSION = "0.0.1"
 
@@ -93,8 +94,8 @@ class GUINetFTPd( ftpd.NetFTPd ) :
 
 class ServerThread :
     def Start(self):
-        import thread
-        thread.start_new_thread(self.Run, ())
+        import _thread
+        _thread.start_new_thread(self.Run, ())
         self.keepGoing = True
         self.running = False
 
@@ -102,7 +103,7 @@ class ServerThread :
         # owns the client thread list and is responsible for asking the client
         # thread to stop.  Add an ID to killid_list to have Run() ask it to
         # stop.
-        self.killid_lock = thread.allocate_lock()
+        self.killid_lock = _thread.allocate_lock()
         self.killid_list = []
 
     def Stop(self):
@@ -117,7 +118,7 @@ class ServerThread :
         return self.running
 
     def Run(self):
-        print "ServerThread.Run()"
+        print("ServerThread.Run()")
 
         self.running = True
 
@@ -169,13 +170,13 @@ class ServerThread :
         s.close()
 
         # ask all running threads to stop
-        print "asking all threads to stop"
+        print("asking all threads to stop")
         for t in thds :
             if t.IsRunning() :
                 t.Stop()
 
         self.running = False
-        print "ServerThread.Run() leaving"
+        print("ServerThread.Run() leaving")
 
 #----------------------------------------------------------------------
 
@@ -288,7 +289,7 @@ class MyFrame(wx.Frame):
         self.tb.Realize()
 
         foo = self.tb.EnableTool( self.runbtnid, False )
-        print foo,type(foo),dir(foo)
+        print(foo,type(foo),dir(foo))
 
         # status bar
         self.sb = self.CreateStatusBar()
@@ -367,11 +368,11 @@ class MyFrame(wx.Frame):
 
         if id == self.stopbtnid :
             if self.ftpthrd.IsRunning():
-                print "stopping all threads"
+                print("stopping all threads")
                 self.ftpthrd.Stop()
         elif id == self.runbtnid :
             if not self.ftpthrd.IsRunning() :
-                print "starting ftp thread"
+                print("starting ftp thread")
                 self.ftpthrd.Start()
 
     def OnHelpAbout( self, event ):
@@ -413,9 +414,9 @@ class MyFrame(wx.Frame):
             menu.Destroy()
 
     def OnPopupDisconnect( self, event ):
-        print "OnPopupDisconnect()"
+        print("OnPopupDisconnect()")
 
-        print self.list.GetSelectedItemCount()
+        print(self.list.GetSelectedItemCount())
 
         for i in range(self.list.GetItemCount()) :
             item = self.list.GetItem(i)
@@ -423,9 +424,9 @@ class MyFrame(wx.Frame):
 #                print "item.GetState() is valid"
 #            else :
 #                print "item.GetState() is not valid"
-            print i,self.list.GetItemText(i),item.GetData(),hex(self.list.GetItemState(i,wx.LIST_STATE_SELECTED))
+            print(i,self.list.GetItemText(i),item.GetData(),hex(self.list.GetItemState(i,wx.LIST_STATE_SELECTED)))
             if self.list.GetItemState(i,wx.LIST_STATE_SELECTED) & wx.LIST_STATE_SELECTED :
-                print item.GetText(),"is selected"    
+                print(item.GetText(),"is selected")    
                 self.ftpthrd.StopById( item.GetData() )
 
     def OnFileSettings( self, event ):
@@ -472,7 +473,7 @@ class MyFrame(wx.Frame):
             self.logdlg.Close()
 
     def OnCloseLogWindow( self, event ) :
-        print "OnCloseLogWindow()"
+        print("OnCloseLogWindow()")
         self.logdlg.Destroy()
         self.logdlg = None
 
@@ -531,14 +532,14 @@ try:
     os.chdir( g_root_dir )
     # if we get here, go back where we were
     os.chdir( ".." )
-except OSError,e:
+except OSError as e:
     ok = 0
 
 if not ok :
     try:
         ok = 1
         os.mkdir( g_root_dir )
-    except OSError,e:
+    except OSError as e:
         startup_error_msg = "I was unable to create the FTP server's file directory.\n\
 The operating system reported \"%s\"." % e.strerror
         ok = 0

@@ -5,7 +5,6 @@ import sys
 import string
 import socket
 import stat
-import dircache
 import time
 import glob
 import errno
@@ -22,7 +21,7 @@ def get_filelist( path, filespec ) :
         else :
             filelist = glob.glob( filespec )
     else :
-        filelist = dircache.listdir( path )
+        filelist = os.listdir( path )
     return filelist
 
 def binls( path, filespec ) :
@@ -34,8 +33,8 @@ def binls( path, filespec ) :
         try : 
             (st_mode, st_ino, st_dev, st_nlink, st_uid, st_gid,
                             st_size, st_atime, st_mtime, st_ctime) = os.stat( os.path.join( path, f ) )
-        except OSError,err :
-            print "Could not stat \"%s\" :" % f, err
+        except OSError as err :
+            print("Could not stat \"%s\" :" % f, err)
         else :
             p = [ '-', '-', '-', '-', '-', '-', '-', '-', '-', '-' ]
             
@@ -88,7 +87,11 @@ class Error(Exception): pass
 #class error_temp(Error): pass           # 4xx errors
 #class error_perm(Error): pass           # 5xx errors
 #class error_proto(Error): pass          # response does not begin with [1-5]
-class InternalError(Error): pass
+class InternalError(Error): 
+    pass
+
+class AbnormalStop(Error):
+    pass
 
 class error_path( Error ) :
     # Error related to a file or path
@@ -131,7 +134,7 @@ LF = '\n'
 
 connect_greeting = "Hello from ftpd.py version 1.0.0!"   
 
-class NetFTPd :
+class NetFTPd(object) :
     root_dir = None # OS level directory which is the root of our ftp directory.
                     # If not set in __init__, defaults to os.getcwd().
     cwd = []   # current working ftp directory as an array of strings
@@ -156,19 +159,19 @@ class NetFTPd :
         self.client_address = client_address
         self.client_port = client_port
 
-        if kargs.has_key('root_dir') :
+        if 'root_dir' in kargs :
             self.root_dir = kargs['root_dir']
         else:
             self.root_dir = os.getcwd()
 
     def logit( self, *msg ) :
-        print self.client_address,self.client_port,
+        print(self.client_address,self.client_port, end=' ')
         for m in msg :
-            print m,
-        print
+            print(m, end=' ')
+        print()
 
     def stop( self ) :
-        print "NetFTPd.stop()"
+        print("NetFTPd.stop()")
         self.abnormal_stop = 1
 
     def set_debuglevel(self, level):
@@ -186,7 +189,7 @@ class NetFTPd :
             while i > 5 and s[i-1] in '\r\n':
                 i = i-1
             s = s[:5] + '*'*(i-5) + s[i:]
-        return `s`
+        return repr(s)
 
     # Internal: send one line to the server, appending CRLF
     def putline(self, line):
@@ -194,7 +197,7 @@ class NetFTPd :
         if self.debugging > 1: 
             self.logit( '*put* %s' % self.sanitize(line) )
 #        self.request.send(line)
-        self.senddata(self.request,line)
+        self.senddata(self.request,bytes(line,'UTF-8'))
 
     # Internal: return one line from the server, stripping CRLF.
     # Raise EOFError if the connection is closed
@@ -213,10 +216,10 @@ class NetFTPd :
     # blocking and can self-die if necessary if outside forces decide this
     # client should be disconnected.
     def readline( self ) :
-        line = ""
+        line = bytes()
         while 1 :
             if self.abnormal_stop : 
-                raise "Abnormal Stop"
+                raise AbnormalStop
             # wait for data with a one second timeout
             readable_sockets = select.select( [self.request], [], [], 1 )[0]
             if not readable_sockets :
@@ -233,7 +236,7 @@ class NetFTPd :
         data = ""
         while 1 :
             if self.abnormal_stop : 
-                raise "Abnormal Stop"
+                raise AbnormalStop
             # wait for data with a one second timeout
             readable_sockets = select.select( [sock], [], [], 1 )[0]
             if not readable_sockets :
@@ -249,7 +252,7 @@ class NetFTPd :
         datalen = len(data)
         while datalen > 0 :
             if self.abnormal_stop : 
-                raise "Abnormal Stop"
+                raise AbnormalStop
             # wait for writable socket with a one second timeout
             writable_sockets = select.select( [], [sock], [], 1 )[1]
             if not writable_sockets :
@@ -317,7 +320,7 @@ class NetFTPd :
         while not authenticated :
             try : 
                 (cmd,data) = self.get_command()
-            except error_command,err :
+            except error_command as err :
                 self.error500(err.cmd)
             else :
                 if cmd == "USER" :
@@ -377,7 +380,7 @@ class NetFTPd :
         self.logit( ftppath, abspath )
         try :
             st = os.stat( abspath )
-        except OSError,e :
+        except OSError as e :
             raise error_path( newcwd, "550 Invalid path." )
         if not stat.S_ISDIR(st[stat.ST_MODE]) :
             raise error_path( newcwd, "550 Invalid path." )
@@ -407,7 +410,7 @@ class NetFTPd :
 
         try :
             self.chdir(arg)
-        except error_path,e:
+        except error_path as e:
             self.putline( "501 Invalid directory." )
         else :
             self.putline( "200 CWD successful." )
@@ -455,7 +458,7 @@ class NetFTPd :
         port = self.data_sock.getsockname()[1] # Get proper port
         host = self.request.getsockname()[0] # Get proper host
         hbytes = host.split('.')
-        pbytes = [`port/256`, `port%256`]
+        pbytes = [repr(port/256), repr(port%256)]
         bytes = hbytes + pbytes
         self.putline( "227 Entering Passive Mode (%s)." % ','.join(bytes) )
 
@@ -512,7 +515,7 @@ class NetFTPd :
             (path,filespec) = split_file_path( abspath )
             filelist = get_filelist( path, filespec )
         else :
-            filelist = dircache.listdir( self.abspath )
+            filelist = os.listdir( self.abspath )
 
         self.open_data_port()
 
@@ -589,7 +592,7 @@ class NetFTPd :
         # will raise an exception if the file doesn't exist.
         try :
             statinfo = os.stat(abspath)
-        except OSError,err :
+        except OSError as err :
             if not err.errno == errno.ENOENT :
                 self.logit( "! Could not stat \"%s\" :" % abspath, err )
                 raise error_path( abspath, "501 Bad path." )
@@ -603,11 +606,11 @@ class NetFTPd :
             if self.type == 'A' :
                 if sys.platform == 'win32' :
                     # save with CRLF line endings
-                    print "Dosfile"
+                    print("Dosfile")
                     f = cvtfile.DosToUnixFile()
                 else :
                     # save with LF line endings
-                    print "Unixfile"
+                    print("Unixfile")
                     f = cvtfile.UnixToDosFile()
                 f.open( abspath, 'wb' )
             else :
@@ -636,7 +639,7 @@ class NetFTPd :
     def file_stat( self, ftppath, abspath ) :
         try :
             statinfo = os.stat(abspath)
-        except OSError,err :
+        except OSError as err :
             self.logit( "! Could not stat \"%s\" :" % abspath, err )
             raise error_path( abspath, "550 Failed to stat \"%s\"." % ftppath )
 
@@ -695,8 +698,8 @@ class NetFTPd :
                           "SIZE" : command_size,
                           "MDTM" : command_mdtm,
                         }
-    commands = command_functions.keys()
-    [commands.append( x ) for x in [ "USER", "PASS", "QUIT" ] ]
+    commands = list(command_functions.keys())
+    commands.extend( ("USER", "PASS", "QUIT") )
 
     def serveit( self ) :
         """The Main Event."""
@@ -716,7 +719,7 @@ class NetFTPd :
         while 1 :
             try :
                 (cmd,data) = self.get_command()
-            except error_command,err :
+            except error_command as err :
                 self.error500( err.cmd ) 
             else :
                 if cmd == "QUIT" :
@@ -725,7 +728,7 @@ class NetFTPd :
                     self.command_functions[cmd](self,data)
                 except KeyError :
                     self.error500( cmd ) 
-                except (error_path,error_command),err :
+                except (error_path,error_command) as err :
                     # user sent us a valid command which for some reason we
                     # don't like; send back the error message and wait for
                     # another command
@@ -743,7 +746,7 @@ class NetFTPd :
             self.serveit()
         except EOFError :
             self.logit( "# Client terminated connection." )
-        except socket.error,err :
+        except socket.error as err :
             self.logit( "# Network error: %s (%d)" % (err[1],err[0]) )
 
     # For BaseRequestHandler()
@@ -752,7 +755,7 @@ class NetFTPd :
         self.request.shutdown(2)
         self.request.close()
 
-class FTPThread :
+class FTPThread(object) :
     def __init__( self, request, handler_class ) :
         self.request = request
         self.ftpd = None
@@ -764,11 +767,11 @@ class FTPThread :
 
     def Start(self):
         self.running = True
-        import thread
-        thread.start_new_thread(self.Run, ())
+        import _thread
+        _thread.start_new_thread(self.Run, ())
 
     def Stop(self):
-        print "FTPThread.Stop()"
+        print("FTPThread.Stop()")
         if self.ftpd :
             self.ftpd.stop()
 
@@ -776,7 +779,7 @@ class FTPThread :
         return self.running
 
     def Run(self):
-        print "FTPThread.Run()"
+        print("FTPThread.Run()")
 
         self.ftpd = self.handler_class( self.request, self.client_address, self.client_port )
         self.ftpd.setup()
@@ -784,18 +787,18 @@ class FTPThread :
             self.ftpd.handle()
         except :
             # lifted this from SocketServer
-            print '-'*40
-            print 'Exception happened during processing of request from',self.client_address
+            print('-'*40)
+            print('Exception happened during processing of request from',self.client_address)
             import traceback
             traceback.print_exc() # XXX But this goes to stderr!
-            print '-'*40
+            print('-'*40)
 
         self.ftpd.finish()
         del self.ftpd
         self.ftpd = None
 
         self.running = False
-        print "FTPThread.Run() leaving"
+        print("FTPThread.Run() leaving")
 
 def sync_server( s ) :
     """A synchronous, blocking FTP server."""
@@ -826,7 +829,7 @@ if __name__ == '__main__' :
         if thd :
             thd.Stop()
             while thd.IsRunning() :
-                print "waiting for thread to die..."
+                print("waiting for thread to die...")
                 time.sleep(1)
             del thd
 

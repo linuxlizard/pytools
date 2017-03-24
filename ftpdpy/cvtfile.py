@@ -28,7 +28,7 @@ CRLF = '\r\n'
 CR = '\r'
 LF = '\n'
 
-class ConvertFile :
+class ConvertFile(object) :
     buffer = ""
     filename = ""
     file = None
@@ -136,7 +136,7 @@ class UnixToDosFile( ConvertFile ) :
         # block - 'buffer' parameter; data used in each invocation of convert()
         # chunk - resulting array of strings from a block split by LF
 
-        print "UnixToDosFile.convert()"
+        print("UnixToDosFile.convert()")
 
         newbuffer = ""
         chunks = buffer.split( LF )
@@ -193,8 +193,9 @@ class Rot13File( ConvertFile ) :
     def convert( self, text ) :
         # rot13 from http://www.miranda.org/~jkominek/rot13/python/rot13.py
         newbuffer = ""
-        for x in range(len(text)):
-            byte = ord(text[x])
+        for c in text:
+            print(c)
+            byte = ord(c)
             cap = (byte & 32)
             byte = (byte & (~cap))
             if (byte >= ord('A')) and (byte <= ord('Z')):
@@ -209,9 +210,9 @@ class Rot13File( ConvertFile ) :
 
 if __name__ == '__main__' :
     
-#    c = UnixToDosFile( "unix.txt" )
-    c = Rot13File( "fall2003.txt" )
-    c.open( "rb" )
+    c = UnixToDosFile()
+#    c = Rot13File()
+    c.open( "rfc959.txt", "rb" )
 
     f = open( "dos.txt", "w" )
     
