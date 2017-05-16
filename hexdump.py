@@ -6,6 +6,10 @@ FILTER=''.join([(len(repr(chr(x)))==3) and chr(x) or '.' for x in range(256)])
 
 def dump(src, length=8):
     N=0; result=''
+    try:
+        src = src.decode("ascii")
+    except AttributeError:
+        pass
     while src:
        s,src = src[:length],src[length:]
        hexa = ' '.join(["%02X"%ord(x) for x in s])
@@ -28,6 +32,6 @@ if __name__ == '__main__' :
        "for string manipulations.\n"
        "The code is \x07even\x08 quite readable!")
 
-    print dump(s, 16)
-    print dump2(s, 16 )
+#    print dump(s, 16)
+#    print dump2(s, 16 )
 
