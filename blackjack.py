@@ -13,6 +13,7 @@ diamond=1
 club=2
 heart=3
 suits_names = ( "S","D","C","H" )
+suits_names = ( "♤", "♢", "♧", "♡" )
 
 ace=0
 two=1
@@ -62,7 +63,7 @@ class Deck(object):
         random.shuffle(self.deck)
 
     def __str__(self):
-        return " ".join([str(c) for c in self.deck])
+        return "  ".join([str(c) for c in self.deck])
 
     def __iter__(self):
         return iter(self.deck)
