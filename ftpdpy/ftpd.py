@@ -75,12 +75,12 @@ MSG_OOB = 0x1                           # Process data out of band
 
 
 # The standard FTP ports
-#FTP_PORT = 21
-#FTP_DATA_PORT = 20
+FTP_PORT = 21
+FTP_DATA_PORT = 20
 
 # For running as non-root user.
-FTP_PORT = 2121
-FTP_DATA_PORT = 2020
+#FTP_PORT = 2121
+#FTP_DATA_PORT = 2020
 
 BUFSIZE = 1024
 
@@ -186,7 +186,7 @@ class NetFTPd(object) :
         line = line + CRLF
         if self.debugging > 1: 
             logger.info( '*put* %s', self.sanitize(line) )
-        self.senddata(self.request,line.encode("utf8"))
+        self.senddata(self.request,line.encode())
 
     # Internal: return one line from the server, stripping CRLF.
     # Raise EOFError if the connection is closed
@@ -204,7 +204,7 @@ class NetFTPd(object) :
     # blocking and can self-die if necessary if outside forces decide this
     # client should be disconnected.
     def readline( self ) :
-        line = bytes()
+        line = str()
         while 1 :
             if self.abnormal_stop : 
                 raise AbnormalStop
@@ -216,7 +216,7 @@ class NetFTPd(object) :
             c = self.request.recv( 1 ) 
             if not c :
                 raise EOFError
-            line += c.decode("UTF-8")
+            line += c.decode()
             if line[-2:] == CRLF :
                 return line 
 
@@ -487,7 +487,7 @@ class NetFTPd(object) :
         self.open_data_port()
 
         for f in filelist :
-            self.data_sock.send( (f+CRLF).encode("UTF-8") )
+            self.data_sock.send( (f+CRLF).encode() )
 
         self.data_sock.close()
         self.data_sock = None
@@ -510,7 +510,7 @@ class NetFTPd(object) :
 
         for f in filelist :
             if os.path.isfile(f) :
-                self.data_sock.send( f+CRLF )
+                self.data_sock.send( (f+CRLF).encode() )
 
         self.data_sock.close()
         self.data_sock = None
