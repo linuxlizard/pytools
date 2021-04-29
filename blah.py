@@ -13,16 +13,16 @@ def main() :
     infile = sys.stdin
     outfile = sys.stdout
 
-    word_re = re.compile( "[A-Za-z]{3,}" )
+    word_re = re.compile( "[A-Za-z]{4,}" )
 
     while 1 : 
-        line = infile.readline().strip()
+        line = infile.readline()
 
         # end of file or error
         if len(line) <= 0 : 
             break
 
-        s = re.sub(word_re, "blah", line)
+        s = re.sub(word_re, "blah", line.strip())
         print(s)
         
 if __name__ == '__main__' :
