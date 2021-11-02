@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 
-# Simple syslog message listener. Decodes and prints to stdout.
+# Simple syslog message listener. Decodes and writes messages using python
+# logging module (which will write to stderr)
+#
+# hint:
+# python3 syslog_listen.py 5514 2>&1 | tee /tmp/syslog.log
+#
 # davep 20191106
 
 import sys
@@ -182,8 +187,14 @@ class SyslogListener:
 
 if __name__ == "__main__":
     level = logging.INFO
-    # 	level = logging.DEBUG
+#    level = logging.DEBUG
     logging.basicConfig(level=level)
+
+    # useful for understanding what's going where
+    logger.debug("this is a debug message")
+    logger.info("this is a info message")
+    logger.warning("this is a warning message")
+    logger.error("this is a error message")
 
     port = int(sys.argv[1])
     srv = SyslogListener(port)
