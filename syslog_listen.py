@@ -7,6 +7,8 @@
 # python3 syslog_listen.py 5514 2>&1 | tee /tmp/syslog.log
 #
 # davep 20191106
+#
+# davep 20240311  strip RFC3164/RFC5424 BOM if present
 
 import sys
 import logging
@@ -17,7 +19,6 @@ import select
 import time
 
 logger = logging.getLogger("syslog_listen")
-
 
 class ParseError(Exception):
     def __init__(self, errmsg, bad_line):
@@ -175,6 +176,10 @@ class SyslogListener:
 
         # rest of line is a free-form message
         msg = msg[pos:].strip()
+
+        # check/remove RFC-5424 / RFC-3164 BOM (Byte Order Mark)
+        if ord(msg[0]) == 0xfeff:
+            msg = msg[3:]
 
         return msg_level, msg
 
