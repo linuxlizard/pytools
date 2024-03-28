@@ -37,6 +37,8 @@ class SyslogListener:
     base_mask = select.POLLIN | select.POLLPRI
     error_mask = select.POLLERR | select.POLLHUP | select.POLLNVAL
 
+    PRIORITY = ( "EMERG", "ALERT", "CRIT", "ERR", "WARN", "NOTICE", "INFO", "DEBUG" )
+
     def __init__(self, port):
         self.port = port
         self.sock = None
@@ -143,13 +145,14 @@ class SyslogListener:
                 return None
 
             try:
-                msg_level, msg = self.parse_message(buf.decode("utf8"))
+                priority, facility, msg = self.parse_message(buf.decode("utf8"))
             except ParseError as err:
                 # client threw something at me I don't recognize
                 logger.error(err)
                 continue
             timestamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
-            logger.info("%s <%d> %s", timestamp, msg_level, msg)
+
+            print("%s <%d> <%s> %s" % (timestamp, facility, self.PRIORITY[priority], msg))
 
     def parse_message(self, msg):
         # decode an unsolicited message from wpa_supplicant
@@ -170,6 +173,7 @@ class SyslogListener:
             msg_level = int(msg_level_str)
         except ValueError as err:
             raise ParseError("%s is not an integer" % msg_level_str, msg) from err
+        logger.debug("level_str=%s level=%d", msg_level_str, msg_level)
 
         # skip over the closing >
         pos += 1
@@ -179,9 +183,12 @@ class SyslogListener:
 
         # check/remove RFC-5424 / RFC-3164 BOM (Byte Order Mark)
         if ord(msg[0]) == 0xfeff:
+            logger.debug("strip BOM")
             msg = msg[3:]
 
-        return msg_level, msg
+        priority = msg_level & 0x7
+        facility = msg_level >> 3
+        return priority, facility, msg
 
     def run(self):
         if not self.sock:
