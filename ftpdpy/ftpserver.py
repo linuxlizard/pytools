@@ -289,7 +289,7 @@ class MyFrame(wx.Frame):
         self.tb.Realize()
 
         foo = self.tb.EnableTool( self.runbtnid, False )
-        print(foo,type(foo),dir(foo))
+        print((foo,type(foo),dir(foo)))
 
         # status bar
         self.sb = self.CreateStatusBar()
@@ -416,7 +416,7 @@ class MyFrame(wx.Frame):
     def OnPopupDisconnect( self, event ):
         print("OnPopupDisconnect()")
 
-        print(self.list.GetSelectedItemCount())
+        print((self.list.GetSelectedItemCount()))
 
         for i in range(self.list.GetItemCount()) :
             item = self.list.GetItem(i)
@@ -424,9 +424,9 @@ class MyFrame(wx.Frame):
 #                print "item.GetState() is valid"
 #            else :
 #                print "item.GetState() is not valid"
-            print(i,self.list.GetItemText(i),item.GetData(),hex(self.list.GetItemState(i,wx.LIST_STATE_SELECTED)))
+            print((i,self.list.GetItemText(i),item.GetData(),hex(self.list.GetItemState(i,wx.LIST_STATE_SELECTED))))
             if self.list.GetItemState(i,wx.LIST_STATE_SELECTED) & wx.LIST_STATE_SELECTED :
-                print(item.GetText(),"is selected")    
+                print((item.GetText(),"is selected"))    
                 self.ftpthrd.StopById( item.GetData() )
 
     def OnFileSettings( self, event ):

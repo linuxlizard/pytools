@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import thread
+import _thread
 import time
 
 class FTPThread :
@@ -8,18 +8,18 @@ class FTPThread :
     def Start(self):
         self.keepGoing = True
         self.running = False
-        thread.start_new_thread(self.Run, ())
+        _thread.start_new_thread(self.Run, ())
 
     def Stop(self):
-        print "FTPThread.Stop()"
+        print("FTPThread.Stop()")
         self.keepGoing = False
 
     def IsRunning(self):
-        print self.running
+        print(self.running)
         return self.running
 
     def Run(self):
-        print "FTPThread.Run()"
+        print("FTPThread.Run()")
         while self.keepGoing :
             time.sleep( 0.5 )
             print( "Run()" )
@@ -30,10 +30,10 @@ f.Start()
 
 for i in range(10) :
     time.sleep(1)
-    print "main()"
+    print("main()")
 
 f.Stop()
 while 1 : 
     time.sleep(1)
-    print "main() again"
+    print("main() again")
 

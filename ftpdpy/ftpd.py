@@ -75,12 +75,12 @@ MSG_OOB = 0x1                           # Process data out of band
 
 
 # The standard FTP ports
-FTP_PORT = 21
-FTP_DATA_PORT = 20
+#FTP_PORT = 21
+#FTP_DATA_PORT = 20
 
 # For running as non-root user.
-#FTP_PORT = 2121
-#FTP_DATA_PORT = 2020
+FTP_PORT = 2121
+FTP_DATA_PORT = 2020
 
 BUFSIZE = 1024
 

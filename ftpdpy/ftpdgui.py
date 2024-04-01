@@ -2,13 +2,14 @@
 
 import sys
 import time
-import thread
+import _thread
 import wx
 import wx.lib.mixins.listctrl
 import socket
 import select
 
 import ftpd
+from functools import reduce
 
 VERSION = "0.0.1"
 
@@ -84,8 +85,8 @@ class GUINetFTPd( ftpd.NetFTPd ) :
 
 class ServerThread :
     def Start(self):
-        import thread
-        thread.start_new_thread(self.Run, ())
+        import _thread
+        _thread.start_new_thread(self.Run, ())
         self.keepGoing = True
         self.running = False
 
@@ -93,7 +94,7 @@ class ServerThread :
         # owns the client thread list and is responsible for asking the client
         # thread to stop.  Add an ID to killid_list to have Run() ask it to
         # stop.
-        self.killid_lock = thread.allocate_lock()
+        self.killid_lock = _thread.allocate_lock()
         self.killid_list = []
 
     def Stop(self):
@@ -108,7 +109,7 @@ class ServerThread :
         return self.running
 
     def Run(self):
-        print "ServerThread.Run()"
+        print("ServerThread.Run()")
 
         self.running = True
 
@@ -130,9 +131,9 @@ class ServerThread :
                 # server thread to ask a client thread to stop.  Bleah.
                 self.killid_lock.acquire()
                 if len(self.killid_list) > 0 :
-                    print "stuff to kill!"
+                    print("stuff to kill!")
                     for k in self.killid_list :
-                        print k
+                        print(k)
                         for t in thds :
                             if k == id(t.ftpd) :
                                 t.Stop()
@@ -149,33 +150,33 @@ class ServerThread :
 
             thds.append( thd )
 
-            print "thds=",thds
+            print("thds=",thds)
 
             # *Clang!*  Bring out your dead!  *Clang!*
             # Pull finished threads from our thread list.
             not_dead_yet = []
             for t in thds :
-                print t,t.IsRunning()
+                print(t,t.IsRunning())
                 if t.IsRunning() :
                     not_dead_yet.append(t)
 
             del thds
             thds = not_dead_yet
-            print "new thds=",thds
+            print("new thds=",thds)
 
         s.close()
 
         # ask all running threads to stop
-        print "asking all threads to stop"
-        print thds
+        print("asking all threads to stop")
+        print(thds)
         for t in thds :
-            print t
+            print(t)
             if t.IsRunning() :
-                print "asking",t,"to stop"
+                print("asking",t,"to stop")
                 t.Stop()
 
         self.running = False
-        print "ServerThread.Run() leaving"
+        print("ServerThread.Run() leaving")
 
 #----------------------------------------------------------------------
 
@@ -355,11 +356,11 @@ class MyFrame(wx.Frame):
 
         if id == self.stopbtnid :
             if self.ftpthrd.IsRunning():
-                print "stopping all threads"
+                print("stopping all threads")
                 self.ftpthrd.Stop()
         elif id == self.runbtnid :
             if not self.ftpthrd.IsRunning() :
-                print "starting ftp thread"
+                print("starting ftp thread")
                 self.ftpthrd.Start()
 
         
@@ -394,13 +395,13 @@ class MyFrame(wx.Frame):
             menu.Destroy()
 
     def OnPopupDisconnect( self, event ):
-        print "OnPopupDisconnect()"
+        print("OnPopupDisconnect()")
 
         for i in range(self.list.GetItemCount()) :
             item = self.list.GetItem(i)
-            print i,item.GetData(),hex(item.GetState())
+            print(i,item.GetData(),hex(item.GetState()))
             if item.GetState() & wx.LIST_STATE_SELECTED :
-                print item.GetText(),"is selected"    
+                print(item.GetText(),"is selected")    
                 self.ftpthrd.StopById( item.GetData() )
 
     def OnFileSettings( self, event ):
@@ -447,7 +448,7 @@ class MyFrame(wx.Frame):
             self.logdlg.Close()
 
     def OnCloseLogWindow( self, event ) :
-        print "OnCloseLogWindow()"
+        print("OnCloseLogWindow()")
         self.logdlg.Destroy()
         self.logdlg = None
 

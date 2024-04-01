@@ -4,7 +4,7 @@ import os
 import sys
 import string
 import socket
-import SocketServer
+import socketserver
 import stat
 import dircache
 import time
@@ -35,8 +35,8 @@ def binls( path, filespec ) :
         try : 
             (st_mode, st_ino, st_dev, st_nlink, st_uid, st_gid,
                             st_size, st_atime, st_mtime, st_ctime) = os.stat( os.path.join( path, f ) )
-        except OSError,err :
-            print "Could not stat \"%s\" :" % f, err
+        except OSError as err :
+            print("Could not stat \"%s\" :" % f, err)
         else :
             p = [ '-', '-', '-', '-', '-', '-', '-', '-', '-', '-' ]
             
@@ -132,7 +132,7 @@ LF = '\n'
 
 connect_greeting = "Hello from ftpd.py version 0.0.0"   
 
-class NetFTPd( SocketServer.BaseRequestHandler ) :
+class NetFTPd( socketserver.BaseRequestHandler ) :
     cwd = []   # current working ftp directory as an array of strings
     ftppath = "/"  # current working ftp directory as a single string
     debugging = 2
@@ -148,13 +148,13 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
     data_sock = None
 
     def __init__(self, request, client_address, server):
-        print "__init__"
-        SocketServer.BaseRequestHandler.__init__( self, request, client_address, server )
+        print("__init__")
+        socketserver.BaseRequestHandler.__init__( self, request, client_address, server )
 
     def logit( self, *msg ) :
         for m in msg :
-            print m,
-        print
+            print(m, end=' ')
+        print()
 
     def stop( self ) :
         self.abnormal_stop = 1
@@ -174,7 +174,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
             while i > 5 and s[i-1] in '\r\n':
                 i = i-1
             s = s[:5] + '*'*(i-5) + s[i:]
-        return `s`
+        return repr(s)
 
     # Internal: send one line to the server, appending CRLF
     def putline(self, line):
@@ -208,7 +208,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
             if not readable_sockets :
                 if self.abnormal_stop : 
                     raise "Abnormal Stop"
-                print "readline timeout" 
+                print("readline timeout") 
                 continue
 
             c = self.request.recv( 1 ) 
@@ -226,7 +226,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
             if not readable_sockets :
                 if self.abnormal_stop : 
                     raise "Abnormal Stop"
-                print "readdata timeout" 
+                print("readdata timeout") 
                 continue
 
             data = sock.recv( buflen ) 
@@ -243,7 +243,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
             if not writable_sockets :
                 if self.abnormal_stop : 
                     raise "Abnormal Stop"
-                print "write timeout" 
+                print("write timeout") 
                 continue
 
             n = sock.send(data)
@@ -308,7 +308,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
         while not authenticated :
             try : 
                 (cmd,data) = self.get_command()
-            except error_command,err :
+            except error_command as err :
                 self.error500(err.cmd)
             else :
                 if cmd == "USER" :
@@ -368,7 +368,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
         self.logit( ftppath, abspath )
         try :
             st = os.stat( abspath )
-        except OSError,e :
+        except OSError as e :
             raise error_path( newcwd, "550 Invalid path." )
         if not stat.S_ISDIR(st[stat.ST_MODE]) :
             raise error_path( newcwd, "550 Invalid path." )
@@ -398,7 +398,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
 
         try :
             self.chdir(arg)
-        except error_path,e:
+        except error_path as e:
             self.putline( "501 Invalid directory." )
         else :
             self.putline( "200 CWD successful." )
@@ -446,7 +446,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
         port = self.data_sock.getsockname()[1] # Get proper port
         host = self.request.getsockname()[0] # Get proper host
         hbytes = host.split('.')
-        pbytes = [`port/256`, `port%256`]
+        pbytes = [repr(port/256), repr(port%256)]
         bytes = hbytes + pbytes
         self.putline( "227 Entering Passive Mode (%s)." % ','.join(bytes) )
 
@@ -580,7 +580,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
         # will raise an exception if the file doesn't exist.
         try :
             statinfo = os.stat(abspath)
-        except OSError,err :
+        except OSError as err :
             if not err.errno == errno.ENOENT :
                 self.logit( "! Could not stat \"%s\" :" % abspath, err )
                 raise error_path( abspath, "501 Bad path." )
@@ -594,11 +594,11 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
             if self.type == 'A' :
                 if sys.platform == 'win32' :
                     # save with CRLF line endings
-                    print "Dosfile"
+                    print("Dosfile")
                     f = cvtfile.DosToUnixFile()
                 else :
                     # save with LF line endings
-                    print "Unixfile"
+                    print("Unixfile")
                     f = cvtfile.UnixToDosFile()
                 f.open( abspath, 'wb' )
             else :
@@ -627,7 +627,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
     def file_stat( self, ftppath, abspath ) :
         try :
             statinfo = os.stat(abspath)
-        except OSError,err :
+        except OSError as err :
             self.logit( "! Could not stat \"%s\" :" % abspath, err )
             raise error_path( abspath, "550 Failed to stat \"%s\"." % ftppath )
 
@@ -686,7 +686,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
                           "SIZE" : command_size,
                           "MDTM" : command_mdtm,
                         }
-    commands = command_functions.keys()
+    commands = list(command_functions.keys())
     [commands.append( x ) for x in [ "USER", "PASS", "QUIT" ] ]
 
     def serveit( self ) :
@@ -707,7 +707,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
         while 1 :
             try :
                 (cmd,data) = self.get_command()
-            except error_command,err :
+            except error_command as err :
                 self.error500( err.cmd ) 
             else :
                 if cmd == "QUIT" :
@@ -716,7 +716,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
                     self.command_functions[cmd](self,data)
                 except KeyError :
                     self.error500( cmd ) 
-                except (error_path,error_command),err :
+                except (error_path,error_command) as err :
                     # user sent us a valid command which for some reason we
                     # don't like; send back the error message and wait for
                     # another command
@@ -726,8 +726,8 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
     def setup(self) :
         self.logit( "NetFTPd.setup()" )
 
-        print self.server
-        print dir(self.server)
+        print(self.server)
+        print(dir(self.server))
 
     # For BaseRequestHandler()
     def handle( self ) :
@@ -737,7 +737,7 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
             self.serveit()
         except EOFError :
             self.logit( "# Client terminated connection." )
-        except socket.error,err :
+        except socket.error as err :
             self.logit( "# Network error: %s (%d)" % (err[1],err[0]) )
 
     # For BaseRequestHandler()
@@ -745,36 +745,36 @@ class NetFTPd( SocketServer.BaseRequestHandler ) :
         self.logit( "NetFTPd.finish()" )
         self.request.close()
 
-class ReuseTCPServer(SocketServer.ThreadingTCPServer):
+class ReuseTCPServer(socketserver.ThreadingTCPServer):
 
     def server_bind(self) :
-        print "ReuseTCPServer.server_bind()"
+        print("ReuseTCPServer.server_bind()")
         self.allow_reuse_address = 1
-        SocketServer.TCPServer.server_bind(self)
+        socketserver.TCPServer.server_bind(self)
 
     def finish_request( self, request, client_address ) :
-        print "start ReuseTCPSErver.finish_request()"
-        print request
-        print "client=",client_address
-        SocketServer.ThreadingTCPServer.finish_request( self, request, client_address )
-        print "end ReuseTCPSErver.finish_request()"
+        print("start ReuseTCPSErver.finish_request()")
+        print(request)
+        print("client=",client_address)
+        socketserver.ThreadingTCPServer.finish_request( self, request, client_address )
+        print("end ReuseTCPSErver.finish_request()")
 
     def process_request( self, request, client_address ) :
-        print "start ReuseTCPServer.process_request()"
-        print request
-        print "client=",client_address
-        SocketServer.ThreadingTCPServer.process_request( self, request, client_address )
-        print "end ReuseTCPServer.process_request()"
+        print("start ReuseTCPServer.process_request()")
+        print(request)
+        print("client=",client_address)
+        socketserver.ThreadingTCPServer.process_request( self, request, client_address )
+        print("end ReuseTCPServer.process_request()")
 
     def server_activate(self) :
-        print "ReuseTCPServer.server_activate()"
-        SocketServer.TCPServer.server_activate(self)
+        print("ReuseTCPServer.server_activate()")
+        socketserver.TCPServer.server_activate(self)
 
     def close_request(self,request) :
-        print "start ReuseTCPServer.close_request()"
-        print request
-        SocketServer.TCPServer.close_request(self,request)
-        print "end ReuseTCPServer.close_request()"
+        print("start ReuseTCPServer.close_request()")
+        print(request)
+        socketserver.TCPServer.close_request(self,request)
+        print("end ReuseTCPServer.close_request()")
 
 if __name__ == '__main__' :
     myHost = ''
