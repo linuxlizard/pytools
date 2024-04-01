@@ -74,8 +74,8 @@ def ftp_store_passive(server_ip, filename):
     data_sock.close()
     txrx(ctrl_sock, "QUIT\r\n")
 
-if len(sys.argv) < 4:
-    print("usage: %s my-ipaddress server-ipaddress file0 [file1 [file2...]]" % sys.argv[0])
+if len(sys.argv) < 3:
+    print("usage: %s server-ipaddress file0 [file1 [file2...]]" % sys.argv[0])
     sys.exit(1)
 
 server_ip = sys.argv[1]
