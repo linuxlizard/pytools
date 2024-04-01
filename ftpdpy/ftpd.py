@@ -283,6 +283,7 @@ class NetFTPd(object) :
             self.data_sock.bind( ('', FTP_DATA_PORT))
 
     def open_data_port( self ) :
+        logger.debug("open_data_port type=%s passive=%s", self.type, self.passive)
         if self.data_sock :
             self.putline( "125 Data connection already open; transfer starting." )
         else :
@@ -299,6 +300,9 @@ class NetFTPd(object) :
             self.data_sock.close()
             self.data_sock = sock
         else :
+            assert self.data_sock
+            assert self.port_ip
+            assert self.port_num
             logger.debug( "data_sock=%s remote ip=%s port=%d", self.data_sock, self.port_ip, self.port_num )
             self.data_sock.connect( (self.port_ip,self.port_num) )
 
@@ -576,6 +580,7 @@ class NetFTPd(object) :
         ftppath = arg
         abspath = self.ftppath_to_abspath( ftppath )
         (path,filespec) = split_file_path( abspath )
+        logger.debug("STOR %s %s", path, filespec)
 
         # If the target exists, make sure it's a file.  If the target doesn't
         # exist, not a big deal.  Not using self.file_stat() since file_stat()
@@ -608,6 +613,7 @@ class NetFTPd(object) :
         except IOError :
             raise error_path( abspath, "550 Failed to open file for writing." )
 
+        logger.debug("opening data port...")
         self.open_data_port()
 
         while 1 :
@@ -849,7 +855,7 @@ class NetFTPd(object) :
         except EOFError :
             logger.info( "Client terminated connection." )
         except socket.error as err :
-            logger.error( "Network error: %s (%d)", err[1], err[0] )
+            logger.error( "Network error from client=%s: err=%d msg=%s", self.client_address, err.errno, err.strerror)
 
     # For BaseRequestHandler()
     def finish(self) :
